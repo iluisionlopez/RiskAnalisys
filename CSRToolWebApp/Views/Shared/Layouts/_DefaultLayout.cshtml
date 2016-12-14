@@ -1,0 +1,51 @@
+﻿@using CSRToolWebApp.Common
+@using CSRToolWebApp.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="https://static.scania.com/prod/css/global/images/logos/favicon.ico">
+
+    @*  Scania Bootstrap *@
+    @Styles.Render("//static.scania.com/prod/css/global/ver20130920/scania-intranet-styles.css")
+    @Styles.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/css/scania-bootstrap.css")
+    @*  Local style sheet *@
+    @Styles.Render("~/Content/Local.css")
+</head>
+
+<body class="bootstrap" @(SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft ? "dir=rtl" : "")>
+    <div class="container portal-main-container padding-top">
+        @Html.Partial("_ApplicationHeader", new ApplicationHeaderOption() { ShowLogo = true, ShowApplicationTitle = true, ShowFAQLink = true, ShowHelpLink = true, ShowAboutLink = true, ShowLanguageDropDown = true, ShowLoggedInUserInfo = true, ShowLogOutLink = true })
+        @Html.Partial("_ApplicationMenu")
+        
+        @* Global user messages *@
+        @Html.Partial("_GlobalUserMessages")
+
+        <div class="container portlet-application padding-top">
+            @* Bread crumbs section (optional, will be set by/in views) *@
+            @RenderSection("breadCrumbs", required: false)
+            @RenderBody()
+        </div>
+
+        @Html.Partial("_ApplicationFooter")
+    </div>
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/html5shiv.js")
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/respond.min.js")
+    @Scripts.Render("//static.scania.com/prod/js/global/ver20130920/scania-intranet-scripts.js")
+    @Scripts.Render("//static.scania.com/prod/frameworks/jquery/jquery-1.10.2.min.js")
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/bootstrap.min.js")
+    @Scripts.Render("~/scripts/jquery_extensions_center.js")
+    @Scripts.Render("~/scripts/Common.js")
+    @Scripts.Render("~/Scripts/ApplicationGlobal.js")
+    @* Additional view scripts section (optional, will be set by/in views) *@
+    @RenderSection("additionalViewScripts", required: false)
+
+    @*  Used for "blud screen" and "Progress message" *@
+    @Html.Partial("_BlurScreenAndProgressMessage")
+</body>
+</html>

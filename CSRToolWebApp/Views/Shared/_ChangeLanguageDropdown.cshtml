@@ -1,0 +1,40 @@
+﻿@using System.Globalization
+@using CSRToolWebApp.Common
+
+@helper GetLanguageName(CultureInfo ci)
+{
+    if (ci.TextInfo.IsRightToLeft)
+    {
+        var RtlCultureInfo = string.Format("{0} ({1})", ci.EnglishName, new RegionInfo(ci.Name).EnglishName);
+
+        @RtlCultureInfo
+    }
+    else
+    {
+        @ci.NativeName
+    }
+}
+
+@*  Always display "select language dropdown" as LTR *@
+<div class="btn-group" id="SelectLanguageMenu" dir="ltr">
+    <button class="btn btn-link btn-md" id="SelectLanguageMenuButton" type="button" data-toggle="dropdown">@GetLanguageName(SessionHandler.SelectedLanguage) <i class="icon-caret-down"></i></button>
+    <ul class="dropdown-menu" id="SelectLanguageDropDown">
+        @foreach (string code in Helper.Application.SupportedLangCodes)
+        {
+            CultureInfo lang = new CultureInfo(code);
+            string langName = string.Empty;
+            string selected = (lang.Name == SessionHandler.SelectedLanguage.Name ? "selected" : "");
+
+            if (lang.TextInfo.IsRightToLeft)
+            {
+                langName = string.Format("{0} ({1})", lang.EnglishName, new RegionInfo(lang.Name).EnglishName);
+            }
+            else
+            {
+                langName = lang.NativeName;
+            }
+
+            <li><a href="@Url.Action("ChangeLanguage", "Home", new { langCode = code, returnUrl = this.Request.RawUrl })">@langName</a></li>
+        }
+    </ul>
+</div>

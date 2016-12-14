@@ -1,0 +1,43 @@
+﻿<div id="BlurContainer">
+    <div id="ScreenProgressBoxBlurScreen" class="BlurScreen">
+    </div>
+    <div id="ScreenProgressBox" class="alert alert-info">
+        <i class="icon-spinner icon-spin icon-2x"></i>
+        <label id="ScreenProgressBoxText">
+        </label>
+    </div>
+</div>
+<script type="text/jscript" language="javascript">
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $("#ScreenProgressBoxBlurScreen").css('top', $(window).scrollTop());
+            $("#ScreenProgressBox").center();
+        });
+        $(window).resize(function () {
+            $("#ScreenProgressBox").center();
+        });
+    });
+
+    // Shows details div on center screen
+    function BlurScreen(msg) {
+        //  Hide any previous message
+        $("#ScreenProgressBox").hide();
+
+        //  Blur screen
+        $("#BlurContainer").show();
+        $("#ScreenProgressBoxBlurScreen").show();
+
+        //  Show progress message
+        if (!!msg) {
+            $("#ScreenProgressBoxText").text(msg);
+            $("#ScreenProgressBox").center();
+
+            // Make ShowProgressBox call with a delay so that it will execute AFTER the form is submitted.
+            // This is to avoid animated GIFs to freeze in IE when a form has been submitted.
+            setTimeout('$("#ScreenProgressBox").show();', 50);
+        }
+    }
+    function UnBlurScreen() {
+        $("#BlurContainer").hide();
+    }
+</script>

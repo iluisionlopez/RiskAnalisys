@@ -1,0 +1,10 @@
+﻿@model IEnumerable<IndexModel>
+
+@foreach (var risk in Model)
+{
+    <div class="col-lg-6 col-xs-6col-sm-6 col-md-6 col-xs-6" style="margin-bottom:5px;">
+        <label class="col-lg-9 col-sm-9 col-md-9 col-xs-9 control-label" for="txtInputCountryRiskfactor1">@risk.IndexTypeName</label>
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3" ><input id="@string.Concat("inputCountryRisk", risk.IndexId)" name="@risk.IndexId" class="form-control @string.Concat("bg-color-riskfactor-", risk.Value)" type="number" value="@risk.Value" disabled /></div>
+    </div>
+
+}

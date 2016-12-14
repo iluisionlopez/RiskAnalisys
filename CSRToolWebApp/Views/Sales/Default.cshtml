@@ -1,0 +1,229 @@
+﻿@using CSRToolWebApp.Models
+@using CSRToolWebApp.Common
+@using CSRToolWebApp.Properties
+
+@model CustomerAssessmentModel
+
+@{
+    ViewBag.Title = Resources.NewAssessmentTitle;
+    bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+}
+
+<div class="row-fluid">
+    @if (_isRTL)
+    {
+
+    }
+    else
+    {
+        <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-12">
+            @using (Html.BeginForm("Save", "Sales", FormMethod.Post, new { model = Model, @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.VersionID, new { @id = "hdnVersionID" })
+                @Html.HiddenFor(x => x.AssessmentID)
+
+                <h3 class="text-left">General Information</h3>
+                @*//  Assessor & Date*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputAssessor">@Resources.AssessorLabel</label>
+                    <div class="col-lg-8 col-xs-8 col-xs-8"><input id="txtInputAssessor" name="StringAssessor" class="form-control" type="text" placeholder="Assessor" value="@Model.UserId" disabled /></div>
+                </div>
+                @*//  Date*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputDate">@Resources.DateLabel</label>
+                    <div class="col-lg-8 col-xs-8"><input id="txtInputDate" name="StringDate" class="form-control" type="text" placeholder="Date" value="@Model.AssessmentDate" disabled /></div>
+                </div>
+                @*//  Segment*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputSegment" title="Long-haulage, distribution, mining, engine etc.">@Resources.SegmentLabel</label>
+                    <div class="col-lg-8 col-xs-8">
+                        <input id="Segment" name="Segment" class="form-control" type="text" placeholder="Segment" value="@Model.Segment" />
+                    </div>
+                </div>
+                @*//  Department*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputDepartment">@Resources.ScaniaCompanyDepartmentLabel</label>
+                    <div class="col-lg-8 col-xs-8"><input id="Department" name="Department" class="form-control" type="text" placeholder="Scania Company Department" value="@Model.Department" /></div>
+                </div>
+                @*//  Responsible*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputResponsible">@Resources.ResponsibleSalesPersonLabel</label>
+                    <div class="col-lg-8 col-xs-8"><input id="Responsible" name="Responsible" class="form-control" type="text" placeholder="Responsible Sales Person" value="@Model.Responsible" /></div>
+                </div>
+                @*//  Customer*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputCustomer">@Resources.CustomerNameLabel</label>
+                    <div class="col-lg-8 col-xs-8"><input id="AssessmentCustomer" name="AssessmentCustomer" class="form-control" type="text" placeholder="Customer Name" value="@Model.AssessmentCustomer" /></div>
+                </div>
+                @*//  Project*@
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputProject">@Resources.ProjectNameLabel</label>
+                    <div class="col-lg-8 col-xs-8"><input id="Project" name="Project" class="form-control" type="text" placeholder="Project Name" value="@Model.Project" /></div>
+                </div>
+                @*//  Site*@
+                @*<div class="form-group">
+                        <label class="col-lg-4 col-xs-4 control-label" for="txtInputProject">@Resources.SiteNameLabel</label>
+                        <div class="col-lg-8 col-xs-8"><input id="Site" name="Site" class="form-control" type="text" placeholder="Site Name" value="@Model.Site" /></div>
+                    </div>*@
+                <h3 class="text-left ">@Resources.FirstRiskAssessmentTitle</h3>
+                ////Country
+                <div class="form-group">
+                    <div class="col-lg-4 col-xs-4 control-label">
+                        @Html.Label(@Resources.CountryLabel, new { @class = "control-label" })
+                    </div>
+                    <div class="col-lg-8 col-xs-8">
+                        @Html.DropDownListFor(x => x.SelectedCountryID, Model.CountryList, new { id = "TerritoryId", @class = "form-control" })
+                    </div>
+                </div>
+
+                //Country risk
+                <h5 class="text-left">@Resources.CountryRiskTitle</h5>
+                <div id="CountryRiskAssessment" class="form-group">
+                    @Html.Partial("_CountryRiskAssessmentPartial", Model.IndexList)
+                </div>
+                <h5 class="text-left"></h5>
+                // Sector
+                <div class="form-group">
+                    <div class="col-lg-4 col-xs-4 control-label">
+                        @Html.Label(@Resources.SectorLabel, new { @class = "control-label" })
+                    </div>
+                    <div class="col-lg-8 col-xs-8">
+                        @Html.DropDownListFor(x => x.SelectedSectorID, Model.SectorList, new { id = "SectorId", @class = "form-control" })
+                    </div>
+                </div>
+
+                //Case type
+                <div class="form-group" id="CustomerType">
+                    <label class="col-lg-4 col-xs-4 control-label" for="checkBoxes">@Resources.CaseTypeLabel</label>
+                    <div class="col-lg-8 col-xs-8 risk-question" id="CustomerType">
+                        @foreach (var item in Model.CaseTypes)
+                        {
+                            <label class="radio-inline" style="margin-right: 15px;">
+                                @Html.RadioButtonFor(m => m.SelectedCaseID, item.CaseID, new { id = string.Concat("casetype", item.CaseName.Replace(" ", string.Empty)) })
+                                @item.CaseName
+                            </label>
+                        }
+                    </div>
+                </div>
+
+                //RiskAssessmentQuestions
+                <h3 class="text-left ">@Resources.RiskAssessmentQuestionsTitle</h3>
+                //  Offer
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="checkBoxes">@Resources.OfferLabel</label>
+                    <div class="col-lg-8 col-xs-8 offer-types" id="OfferTypes" style="margin-top: 5px;">
+                        @Html.EditorFor(m => m.OfferTypes)
+                    </div>
+                </div>
+                <h5 class="text-left"></h5>
+                //  Customer
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="checkBoxes">@Resources.CustomerLabel</label>
+                    <div class="col-lg-8 col-xs-8 transaction-types" id="TransactionTypes" style="margin-top: 5px;">
+                        @Html.EditorFor(m => m.TransactionTypes)
+                    </div>
+                </div>
+                //SpecificQuestions
+                <h3 class="text-left ">@Resources.SpecificQuestionsTitle</h3>
+                //Environmental management
+                <div id="SpecificQuestion">
+                    @for (int i = 0; i < Model.Questions.Count(); i++)
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" id="@Model.Questions.ToList()[i].Id" data-transaction-type="@Model.Questions.ToList()[i].TransactionTypeId" title="@Model.Questions.ToList()[i].Comment">
+                                    @Model.Questions.ToList()[i].Text
+                                </label>
+                            </div>
+                            <div class="col-lg-10 col-xs-10">
+                                @Html.DropDownListFor(m => m.Questions.ToList()[i].SelectedValue, new SelectList(Model.Questions.ToList()[i].Answers, "Value", "Text", new { ID = "Id" }), new { @class = "form-control answer-selector", Name = Model.Questions.ToList()[i].Name })
+                                @Html.HiddenFor(m => m.Questions.ToList()[i].SelectedValue, new { data_question = Model.Questions.ToList()[i].Name })
+                            </div>
+                            <div class="col-lg-2 col-xs-2">
+                                <input id="answer-@Model.Questions.ToList()[i].Id" name="@Model.Questions.ToList()[i].Name" class="form-control answer-value @Model.Questions.ToList()[i].ClassName" type="number" value="@Model.Questions.ToList()[i].SelectedValue" text="@Model.Questions.ToList()[i].SelectedValue" disabled />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h3>@Resources.WebSearchTitle <a href="javascript:ShowWebScan();"><i class="icon-info-sign btn-lg"></i></a></h3>
+                <h5 class="text-left ">@Resources.WebScan1Label</h5>
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputWebSearch">@Resources.WebSearchInstruction</label>
+                    <div class="col-lg-8 col-xs-8">
+                        <input id="WebScan1" name="WebScan1" class="form-control" type="text" placeholder="WebScan1" disabled="disabled" value="@Model.WebScan1" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="dropDownWebSearchComment">@Resources.WebSearchCommentLabel</label>
+                    <div class="col-lg-8 col-xs-8">
+                        @Html.DropDownListFor(x => x.selectedCommentWebScan1, Model.CommentWebScanList, new { id = "CommentWebScan1", @class = "form-control webscan" })
+                    </div>
+                </div>
+
+                //  WebScan 2
+                <h5 class="text-left">@Resources.WebScan2Label</h5>
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="txtInputWebSearch">@Resources.WebSearchInstruction</label>
+                    <div class="col-lg-8 col-xs-8">
+                        <input id="WebScan2" name="WebScan2" class="form-control" type="text" placeholder="WebScan2" disabled="true" value="@Model.WebScan2" readonly="readonly" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-4 col-xs-4 control-label" for="dropDownWebSearchComment">@Resources.WebSearchCommentLabel</label>
+                    <div class="col-lg-8 col-xs-8">
+                        @Html.DropDownListFor(x => x.selectedCommentWebScan2, Model.CommentWebScanList, new { id = "CommentWebScan2", @class = "form-control webscan" })
+                    </div>
+                </div>
+
+                <h5 class="text-left">Comment</h5>
+                <div class="form-group">
+                    <div class="col-lg-2 col-xs-2"></div>
+                    <div class="col-lg-10 col-xs-10">
+                        <textarea class="form-control" rows="5" id="Comment" name="Comment">@Model.Comment</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-10 col-lg-12 hidden-xs">
+                        <button class="btn btn-default btn-primary" type="submit" confirmsubmitmessage="Are you sure you want to submit this form?">Save</button>
+                        @Html.ActionLink("Print", "PrintPDF", "Sales", new { assessmentID = Model.AssessmentID }, new { @class = "btn btn-default btn-primary btn-print-pdf", target = "_blank" })
+                    </div>
+                </div>
+
+
+            }
+        </div>
+        //Information
+        <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-12">
+            <div class="follow-scroll">
+                <div>
+                    <h3>Risk Result</h3>
+                    <div id="RiskResult" class="form-group">
+                        @Html.Partial("_RiskResultPartial", Model.Risks)
+                    </div>
+                </div>
+                <div>
+                    <h3 class="top20">Recommendation</h3>
+                    <div id="RiskMessageResult" class="form-group">
+                        @Html.Partial("_UserMessage", Model.Recommendation)
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section additionalViewScripts{
+    <script type="text/javascript" src="~/Scripts/App/CustomerAssessment.js"></script>
+    <script type="text/jscript" language="javascript">
+        function ShowWebScan() {
+            var height = 600;
+            var width = 960;
+
+            //  Center on current screen
+            var top = (($(window).height() - height) / 2) + (window.screenY || window.screenTop || 0)
+            var left = (($(window).width() - width) / 2) + (window.screenX || window.screenLeft || 0);
+
+            window.open('@(Url.Action("Webscan", "Home"))', null, 'left=' + left + ', top=' + top + ', height=' + height + ', width=' + width + ', status=no, resizable=no, scrollbars=yes, toolbar=no, location=no, menubar=no');
+        }
+    </script>
+}

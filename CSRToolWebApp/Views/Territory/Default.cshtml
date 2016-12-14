@@ -1,0 +1,23 @@
+﻿@using GridMvc.Html
+@using Territory = CSRToolWebApp.DataContracts.Base.Territory
+
+@model GridMvc.Grid<CSRToolWebApp.DataContracts.Base.SimpleTerritory>
+
+@{
+    ViewBag.Title = "Territories";
+}
+
+@*<div>
+    @Html.Grid(Model).WithPaging(30).Sortable(true).Filterable(true)
+</div>*@
+<div>
+    <div class="col-xs-2">
+        @Html.Label("Territory", new { @class = "control-label" })
+        @Html.DropDownList("TerritoryId", ViewBag.Territories as List<SelectListItem>, new { @class = "form-control" })
+    </div>
+</div>
+
+
+
+
+

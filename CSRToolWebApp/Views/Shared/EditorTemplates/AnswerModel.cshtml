@@ -1,0 +1,7 @@
+﻿@using CSRToolWebApp.Models
+@model AnswerModel
+
+@Html.DropDownList(Model.Value, new SelectList(Model.Id, Model.Text), new { @class = "form-control answer-selector", Name = @Model.Id, Id = @Model.Id, Value = Model.Value })
+@Html.HiddenFor(m => m.Selected)
+@Html.HiddenFor(m => m.Id)
+@Html.HiddenFor(m => m.Name)

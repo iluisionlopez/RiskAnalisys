@@ -1,0 +1,179 @@
+﻿/*  _BlurScreenProgressMessage */
+div.BlurScreen {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(235,235,240);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* for IE 8 */
+    z-index: 9000;
+    overflow: auto;
+    display: none;
+}
+
+#ScreenProgressBox {
+    background-color: White;
+    display: inline-block;
+    z-index: 9999; /* Always on top */
+    display: none;
+    vertical-align: middle;
+}
+
+#SelectLanguageMenu #SelectLanguageMenuButton {
+    font-size: 12px;
+    padding: 0;
+}
+
+#SelectLanguageMenu #SelectLanguageDropDown {
+    font-size: 12px;
+    z-index: 9998; /* Always on top */
+}
+
+/*  Fix for RTL-language */
+#ApplicationMenu.rtl {
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+.bootstrap .checkbox-inline.rtl, .bootstrap .radio-inline.rtl {
+    padding-left: 0;
+}
+.bootstrap .checkbox-inline.rtl + .checkbox-inline.rtl, .bootstrap .radio-inline.rtl + .radio-inline.rtl {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.bootstrap .checkbox-inline.rtl input[type='checkbox'], .bootstrap .radio.rtl input[type='radio'], .bootstrap .radio-inline.rtl input[type='radio'] {
+    margin-left: 7px;
+    float: right;
+}
+
+.form-control.bg-color-riskfactor-0[disabled] {
+    background-color: #E6252A;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-1[disabled] {
+    background-color: #e64325;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-2[disabled] {    
+    background-color: #e66025;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-3[disabled] {    
+    background-color: #e68425;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-4[disabled] {
+    background-color: #fbea27;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-5[disabled] {
+    background-color: #efec36;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-6[disabled] {
+    background-color: #dfe132;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-7[disabled] {
+    background-color: #dce431;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-8[disabled] {
+    background-color: #d8e02a;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-9[disabled] {
+    background-color: #c5cb2a;
+    padding: 4px 8px;
+}
+.form-control.bg-color-riskfactor-10[disabled] {
+    background-color: #b6c12a;
+    padding: 4px 8px;
+}
+div#RiskResult .progress-bar-danger {
+    background-color:#E6252A;
+}
+div#RiskResult .progress-bar-warning {
+    background-color:#e68425;
+}
+div#RiskResult .progress-bar-info {
+    background-color:#f7f72c;
+}
+div#RiskResult .progress-bar-success {
+    background-color:#B7D32A;
+}
+
+#dialog { 
+    height: 600px; 
+    overflow: auto; 
+    font-size: 10pt! important; 
+    font-weight: normal !important; 
+    background-color: #FFFFC1; 
+    margin: 10px; 
+    border: 1px solid #ff6a00; }
+
+#dialog div { 
+    margin-bottom: 15px; 
+}
+
+.nopadding {
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+}
+
+.horizontal-align {
+    margin-top: 2px !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {-moz-appearance: textfield;}
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+
+.rotate {
+  /* FF3.5+ */
+  -moz-transform: rotate(-90.0deg);
+  /* Opera 10.5 */
+  -o-transform: rotate(-90.0deg);
+  /* Saf3.1+, Chrome */
+  -webkit-transform: rotate(-90.0deg);
+  /* IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+  /* Standard */
+  transform: rotate(-90.0deg);
+}
+
+.sidebar-outer{
+    position: relative;
+}
+.fixed, .col-lg-6.sidebar-outer .fixed {
+    position: fixed;
+    width: 35%;
+}
+.a-raiting {
+    background-color: #aeca22; height: 35px; border-bottom: 1px solid #000000; border-left: 1px solid #000000;
+}
+.b-raiting {
+    background-color: #f7f72c; height: 35px; border-bottom: 1px solid #000000; border-left: 1px solid #000000;
+}
+.c-raiting {
+    background-color: #E6252A; height: 35px; border-bottom: 1px solid #000000; border-left: 1px solid #000000;
+}
+
+@media only screen and (max-width: 700px) {
+    #CountryRiskAssessment .control-label {
+        font-size: 9px;
+    }
+}

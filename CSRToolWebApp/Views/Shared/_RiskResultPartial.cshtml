@@ -1,0 +1,39 @@
+﻿@using CSRToolWebApp.Models
+@model IEnumerable<RiskCategoryModel>
+
+<div class="col-lg-3 col-md-3 col-xs-3"></div>
+<div class="col-lg-9 col-md-9 col-xs-9">
+    <div class="col-lg-12 col-md-12 nopadding">
+        <div class="col-lg-3 col-md-3 col-xs-3 text-center">Extreme</div>
+        <div class="col-lg-3 col-md-3 col-xs-3 text-center">High</div>
+        <div class="col-lg-3 col-md-3 col-xs-3 text-center">Medium</div>
+        <div class="col-lg-3 col-md-3 col-xs-3 text-center">Low</div>
+    </div>
+</div>
+@foreach (var risk in Model)
+{
+    <div class="col-lg-3 col-md-3 col-xs-3">@risk.RiskCategoryName</div>
+        <div class="progress col-lg-9 col-md-9 col-xs-9 nopadding">
+            <div class="progress-bar @risk.ProgressAttribute" name="@risk.RiskCategoryName" id="@risk.RiskCategoryID" role="progressbar" aria-valuenow="@risk.RiskCategoryValue" aria-valuemin="0" aria-valuemax="100" style="width: @string.Concat(risk.RiskCategoryValue, "%")">
+                <span class="sr-only">@string.Concat(risk.RiskCategoryValue, "%")</span>
+            </div>
+        </div>
+}
+<div class="col-lg-3 col-md-3 col-xs-3"></div>
+<div class="col-lg-9 col-md-9 col-xs-9 nopadding">
+    <div class="col-lg-12 col-md-12 nopadding">
+        <div class="col-lg-2 col-xs-2 col-md-2 text-left nopadding">0.0</div>
+        <div class="col-lg-8 col-xs-8 col-md-8">
+            <div class="col-lg-12 col-md-12 nopadding">
+                <div class="col-lg-12 col-md-12 nopadding">
+                    <div class="col-lg-2 col-xs-2 col-md-2">2.5</div>
+                    <div class="col-lg-3 col-md-3 col-xs-3 text-right nopadding" style="color: #E6252A">critical ></div>
+                    <div class="col-lg-2 col-xs-2 col-md-2 text-center nopadding">5.0</div>
+                    <div class="col-lg-3 col-md-3 col-xs-3 text-left nopadding" style="color: #B7D32A">> pass</div>
+                    <div class="col-lg-2 col-xs-2 col-md-2 text-right">7.5</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-xs-2 col-md-2 text-right nopadding">10.0</div>
+    </div>
+</div>

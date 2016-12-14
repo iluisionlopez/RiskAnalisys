@@ -1,0 +1,434 @@
+﻿@using CSRToolWebApp.Models
+@using CSRToolWebApp.Common
+@using CSRToolWebApp.Properties
+
+@model CustomerAssessment
+
+        @{
+            ViewBag.Title = Resources.NewAssessmentTitle;
+            bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+
+
+
+        }
+
+        @*@section breadCrumbs{
+            @Html.Partial("_BreadCrumbs", new BreadCrumbs()
+{
+    Items = new List<BreadCrumb>() { new BreadCrumb("Home", Url.Action("", "")),
+                                                                                       new BreadCrumb("New Assessment-Customer", Url.Action("Default", "Sales"), true)}
+})
+        }*@
+
+        @functions
+{
+            public string SetDropDownCountrySelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyCountry ? "selected" : "");
+            }
+
+            public string SetDropDownSectorSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertySector ? "selected" : "");
+            }
+
+            public string SetDropDownQuestion1AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion1Answer ? "selected" : "");
+            }
+
+            public string SetDropDownQuestion2AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion2Answer ? "selected" : "");
+            }
+
+            public string SetDropDownQuestion3AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion3Answer ? "selected" : "");
+            }
+
+            public string SetDropDownQuestion4AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion4Answer ? "selected" : "");
+            }
+            
+            public string SetDropDownQuestion5AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion5Answer ? "selected" : "");
+            }
+            
+            public string SetDropDownQuestion6AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion6Answer ? "selected" : "");
+            }
+
+            public string SetDropDownQuestion18AnswerSelected(int optionValue)
+            {
+                return (optionValue == Model.IntPropertyQuestion18Answer ? "selected" : "");
+            }
+
+            public string SetRadioButtonsSelected(Nullable<MyEnumA> value1, Nullable<MyEnumA> value2)
+            {
+                return (value1 == value2 ? "checked" : "");
+            }
+
+            public string SetCheckboxSelected(bool boolValue)
+            {
+                return (boolValue ? "checked" : "");
+            }
+        }
+
+
+
+
+        <div class="row">
+            @if (_isRTL)
+            {
+
+            }
+            else
+            {
+                <div class="col-md-6">
+
+                    @using (Html.BeginForm("Default", "Sales", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        /*  The form elements/controls are "bound" to the "MyObjectA submittedObject" in the HttpPost Default action using the "name" attribute */
+
+                        <h1>@Resources.CustomerAssessmentFormTitle</h1>
+
+                        //  Assessor & Date
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputAssessor">@Resources.AssessorLabel</label>
+                            <div class="col-lg-8"><input id="txtInputAssessor" name="StringAssessor" class="form-control" type="text" placeholder="Assessor" value="@SessionHandler.LoggedInUser.Id" disabled /></div>
+                        </div>
+
+                        //  Date
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputDate">@Resources.DateLabel</label>
+                            <div class="col-lg-8"><input id="txtInputDate" name="StringDate" class="form-control" type="text" placeholder="Date" value="@DateTime.Now.ToString("yyyy-MM-dd")" disabled /></div>
+                        </div>
+
+                        <h3 class="text-left">General Information</h3>
+
+                        //  Segment
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputSegment">@Resources.SegmentLabel</label>
+                            <div class="col-lg-8"><input id="txtInputSegment" name="StringSegment" class="form-control" type="text" placeholder="Segment" value="@Model.StringSegment" /></div>
+                        </div>
+
+                        //  Department
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputDepartment">@Resources.ScaniaCompanyDepartmentLabel</label>
+                            <div class="col-lg-8"><input id="txtInputDepartment" name="txtInputDepartment" class="form-control" type="text" placeholder="Scania Company Department" value="@Model.StringDepartment" /></div>
+                        </div>
+
+                        //  Responsible
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputResponsible">@Resources.ResponsibleSalesPersonLabel</label>
+                            <div class="col-lg-8"><input id="txtInputResponsible" name="txtInputResponsible" class="form-control" type="text" placeholder="Responsible Sales Person" value="@Model.StringResponsible" /></div>
+                        </div>
+
+                        //  Customer
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCustomer">@Resources.CustomerNameLabel</label>
+                            <div class="col-lg-8"><input id="txtInputCustomer" name="txtInputCustomer" class="form-control" type="text" placeholder="Customer Name" value="@Model.StringCustomer" /></div>
+                        </div>
+
+                        //  Project
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputProject">@Resources.ProjectSiteNameLabel</label>
+                            <div class="col-lg-8"><input id="txtInputProject" name="txtInputProject" class="form-control" type="text" placeholder="Project or Site Name" value="@Model.StringProject" /></div>
+                        </div>
+                        <h3 class="text-left">@Resources.FirstRiskAssessmentTitle</h3>
+                        
+                        //  Drop down list - Country
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="dropDownCountry">@Resources.CountryLabel</label>
+                            <div class="col-lg-8">
+                                <select id="dropDownCountry" name="IntPropertyCountry" class="form-control">
+                                    <option value="1" @SetDropDownCountrySelected(1)>@Resources.Sweden</option>
+                                    <option value="2" @SetDropDownCountrySelected(2)>@Resources.Norway</option>
+                                    <option value="3" @SetDropDownCountrySelected(3)>@Resources.Denmark</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        //Country risk
+                        <h5 class="text-left">@Resources.CountryRiskTitle</h5>
+
+                       //  Local environmental impact & Child labour:
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor1">@Resources.CountryRiskFactor01</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor1" name="IntCountryRiskfactor1" class="form-control" type="number" value="@Model.IntCountryRiskfactor1" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor2">@Resources.CountryRiskFactor02</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor2" name="IntCountryRiskfactor2" class="form-control" type="number" value="@Model.IntCountryRiskfactor2" disabled /></div>
+                        </div>
+
+                        //  Forced or involuntary labour & Discrimination in the work place
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor3">@Resources.CountryRiskFactor03</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor3" name="IntCountryRiskfactor3" class="form-control" type="number" value="@Model.IntCountryRiskfactor3" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor4">@Resources.CountryRiskFactor04</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor4" name="IntCountryRiskfactor4" class="form-control" type="number" value="@Model.IntCountryRiskfactor4" disabled /></div>
+                        </div>
+
+                        //  Minority rights & Occupational health and safety
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor5">@Resources.CountryRiskFactor05</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor5" name="IntCountryRiskfactor5" class="form-control" type="number" value="@Model.IntCountryRiskfactor5" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor6">@Resources.CountryRiskFactor06</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor6" name="IntCountryRiskfactor6" class="form-control" type="number" value="@Model.IntCountryRiskfactor6" disabled /></div>
+                        </div>
+
+                        //  Freedom of association and Collective Bargaining & Freedom of Opinion and Expression
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor7">@Resources.CountryRiskFactor07</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor7" name="IntCountryRiskfactor7" class="form-control" type="number" value="@Model.IntCountryRiskfactor7" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor8">@Resources.CountryRiskFactor08</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor8" name="IntCountryRiskfactor8" class="form-control" type="number" value="@Model.IntCountryRiskfactor8" disabled /></div>
+                        </div>
+
+                        //  Business Environment (Lack of transparency) & Corruption
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor9">@Resources.CountryRiskFactor09</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor9" name="IntCountryRiskfactor9" class="form-control" type="number" value="@Model.IntCountryRiskfactor9" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor10">@Resources.CountryRiskFactor10</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor10" name="IntCountryRiskfactor10" class="form-control" type="number" value="@Model.IntCountryRiskfactor10" disabled /></div>
+                        </div>
+
+                        //  Corporate governance & Governance risk
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor11">@Resources.CountryRiskFactor11</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor11" name="IntCountryRiskfactor11" class="form-control" type="number" value="@Model.IntCountryRiskfactor11" disabled /></div>
+                            <label class="col-lg-4 control-label" for="txtInputCountryRiskfactor12">@Resources.CountryRiskFactor12</label>
+                            <div class="col-lg-2"><input id="txtInputCountryRiskfactor12" name="IntCountryRiskfactor12" class="form-control" type="number" value="@Model.IntCountryRiskfactor12" disabled /></div>
+                        </div>
+                        
+                
+                <h5 class="text-left"></h5>
+                
+                        //  Drop down list - Sector
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="dropDownSector">@Resources.SectorLabel</label>
+                    <div class="col-lg-8">
+                        <select id="dropDownSector" name="IntPropertySector" class="form-control">
+                            <option value="1" @SetDropDownSectorSelected(1)>@Resources.Sector01Name</option>
+                            <option value="2" @SetDropDownSectorSelected(2)>@Resources.Sector02Name</option>
+                            <option value="3" @SetDropDownSectorSelected(3)>@Resources.Sector03Name</option>
+                            <option value="4" @SetDropDownSectorSelected(4)>@Resources.Sector04Name</option>
+                            <option value="5" @SetDropDownSectorSelected(5)>@Resources.Sector05Name</option>
+                            <option value="6" @SetDropDownSectorSelected(6)>@Resources.Sector06Name</option>
+                            <option value="7" @SetDropDownSectorSelected(7)>@Resources.Sector07Name</option>
+                            <option value="8" @SetDropDownSectorSelected(8)>@Resources.Sector08Name</option>
+                            <option value="9" @SetDropDownSectorSelected(9)>@Resources.Sector09Name</option>
+                            <option value="10" @SetDropDownSectorSelected(10)>@Resources.Sector10Name</option>
+                            <option value="11" @SetDropDownSectorSelected(11)>@Resources.Sector11Name</option>
+                            <option value="12" @SetDropDownSectorSelected(12)>@Resources.Sector12Name</option>
+                            <option value="13" @SetDropDownSectorSelected(13)>@Resources.Sector13Name</option>
+                        </select>
+                    </div>
+                </div>
+                
+                
+                        //  Case type
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="checkBoxes">@Resources.CaseTypeLabel</label>
+                            <div class="col-lg-8" id="checkBoxes">
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox1" name="BoolProperty1CaseType" value="true" @SetCheckboxSelected(Model.BoolProperty1CaseType)>New Customer</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox2" name="BoolProperty2CaseType" value="true" @SetCheckboxSelected(Model.BoolProperty2CaseType)>Existing Customer</label>
+                            </div>
+                        </div>
+
+                        <h3 class="text-left">@Resources.RiskAssessmentQuestionsTitle</h3>
+
+                        //  Offer
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="checkBoxes">@Resources.OfferLabel</label>
+                            <div class="col-lg-8" id="checkBoxes">
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox1" name="BoolProperty1Offer" value="true" @SetCheckboxSelected(Model.BoolProperty1Offer)> Product</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox2" name="BoolProperty2Offer" value="true" @SetCheckboxSelected(Model.BoolProperty2Offer)> Service inluding Scania people</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox3" name="BoolProperty3Offer" value="true" @SetCheckboxSelected(Model.BoolProperty3Offer)> Financing</label>
+                            </div>
+                        </div>
+                        <h5 class="text-left"></h5>
+                        //  Customer
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label" for="checkBoxes">@Resources.CustomerLabel</label>
+                            <div class="col-lg-8" id="checkBoxes">
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox4" name="BoolProperty1Customer" value="true" @SetCheckboxSelected(Model.BoolProperty1Customer)> Direct</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox5" name="BoolProperty2Customer" value="true" @SetCheckboxSelected(Model.BoolProperty2Customer)> Public or Government</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox6" name="BoolProperty3Customer" value="true" @SetCheckboxSelected(Model.BoolProperty3Customer)> Agent</label>
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox7" name="BoolProperty4Customer" value="true" @SetCheckboxSelected(Model.BoolProperty4Customer)> Defense</label>
+                            </div>
+                        </div>
+
+                        <h3 class="text-left">@Resources.SpecificQuestionsTitle</h3>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion1">@Resources.Question01</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion1" name="IntPropertyQuestion1" class="form-control">
+                                    <option value="1" @SetDropDownQuestion1AnswerSelected(1)>@Resources.Question01_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion1AnswerSelected(2)>@Resources.Question01_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion1AnswerSelected(3)>@Resources.Question01_Answer03</option>
+                                    <option value="4" @SetDropDownQuestion1AnswerSelected(4)>@Resources.Question01_Answer04</option>
+                                    <option value="5" @SetDropDownQuestion1AnswerSelected(5)>@Resources.Question01_Answer05</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion1" name="IntQuestion1" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion1" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion2">@Resources.Question02</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion2" name="IntPropertyQuestion2" class="form-control">
+                                    <option value="1" @SetDropDownQuestion2AnswerSelected(1)>@Resources.Question02_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion2AnswerSelected(2)>@Resources.Question02_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion2AnswerSelected(3)>@Resources.Question02_Answer03</option>
+                                    <option value="4" @SetDropDownQuestion2AnswerSelected(4)>@Resources.Question02_Answer04</option>
+                                    <option value="5" @SetDropDownQuestion2AnswerSelected(5)>@Resources.Question02_Answer05</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion2" name="IntQuestion2" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion2" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion3">@Resources.Question03</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion3" name="IntPropertyQuestion3" class="form-control">
+                                    <option value="1" @SetDropDownQuestion3AnswerSelected(1)>@Resources.Question03_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion3AnswerSelected(2)>@Resources.Question03_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion3AnswerSelected(3)>@Resources.Question03_Answer03</option>
+                                    <option value="4" @SetDropDownQuestion3AnswerSelected(4)>@Resources.Question03_Answer04</option>
+                                    <option value="5" @SetDropDownQuestion3AnswerSelected(5)>@Resources.Question03_Answer05</option>
+                                   
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion3" name="IntQuestion3" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion3" disabled="true" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion4">@Resources.Question04</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion4" name="IntPropertyQuestion4" class="form-control">
+                                    <option value="1" @SetDropDownQuestion4AnswerSelected(1)>@Resources.Question04_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion4AnswerSelected(2)>@Resources.Question04_Answer02</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion4" name="IntQuestion4" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion4" disabled="true" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion5">@Resources.Question05</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion5" name="IntPropertyQuestion5" class="form-control">
+                                    <option value="1" @SetDropDownQuestion5AnswerSelected(1)>@Resources.Question05_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion5AnswerSelected(2)>@Resources.Question05_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion5AnswerSelected(3)>@Resources.Question05_Answer03</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion5" name="IntQuestion5" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion5" disabled="true" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion18">@Resources.Question18</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion18" name="IntPropertyQuestion18" class="form-control">
+                                    <option value="1" @SetDropDownQuestion18AnswerSelected(1)>@Resources.Question18_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion18AnswerSelected(2)>@Resources.Question18_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion18AnswerSelected(3)>@Resources.Question18_Answer03</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <input id="txtInputQuestion6" name="IntQuestion6" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion6" disabled="true" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="control-label" for="dropDownQuestion6">@Resources.Question06</label>
+                            </div>
+                            <div class="col-lg-11">
+                                <select id="dropDownQuestion6" name="IntPropertyQuestion6" class="form-control">
+                                    <option value="1" @SetDropDownQuestion6AnswerSelected(1)>@Resources.Question06_Answer01</option>
+                                    <option value="2" @SetDropDownQuestion6AnswerSelected(2)>@Resources.Question06_Answer02</option>
+                                    <option value="3" @SetDropDownQuestion6AnswerSelected(3)>@Resources.Question06_Answer03</option>
+                                    <option value="4" @SetDropDownQuestion6AnswerSelected(4)>@Resources.Question06_Answer04</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-1">
+                                <input id="txtInputQuestion6" name="IntQuestion6" class="form-control" type="number" min="0" max="10" value="@Model.IntQuestion6" disabled="true" />
+                            </div>
+                        </div>
+                        
+                        
+                        
+                   <h3>@Resources.WebScanTitle</h3>
+
+                    //  WebScan 1
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="txtInputWebScan1">@Resources.WebScan1Label</label>
+                            <div class="col-lg-6"><input id="txtInputWebScan1" name="StringWebScan1" class="form-control" type="text" placeholder="WebScan1" value="@Model.StringWebScan1" disabled /></div>
+                            <div class="col-lg-4">
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox10" name="BoolWebScan1" value="true" @SetCheckboxSelected(Model.BoolProperty1WebScan)>@Resources.WebScanCheckLabel</label>
+                             </div>
+                        </div>
+                    <h5 class="text-left"></h5>
+                    
+                    //  WebScan 2
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="txtInputWebScan2">@Resources.WebScan2Label</label>
+                            <div class="col-lg-6"><input id="txtInputWebScan2" name="StringWebScan2" class="form-control" type="text" placeholder="WebScan2" value="@Model.StringWebScan2" disabled /></div>
+                            <div class="col-lg-4">
+                                <label class="checkbox-inline"><input type="checkbox" id="checkbox11" name="BoolWebScan2" value="true" @SetCheckboxSelected(Model.BoolProperty2WebScan)>@Resources.WebScanCheckLabel</label>
+                            </div>
+                        </div>     
+
+                        //  Submit button
+                        <div class="form-group">
+                            <div class="col-lg-offset-10 col-lg-12">
+                                <button class="btn btn-default btn-primary" type="submit" confirmsubmitmessage="Are you sure you want to submit this form?">Save</button>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+
+                <div class="col-md-6">
+                    <div class="text-left">
+                        <h3>Information</h3>
+                        @Html.Partial("_UserMessage", new UserMessage(UserMessageType.Info, "Purpose of the risk tool ...", false))
+                        <h3 class="text-left">Result</h3>
+                        <h5 class="text-left">Risk</h5>
+                        <h5 class="text-left">Category</h5>
+                    </div>
+                </div>
+            }
+        </div>
+        @section additionalViewScripts{
+            @*  Put your additional scripts here *@
+        }

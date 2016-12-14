@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.WebApp", "CSRToolWebApp\CSRTool.WebApp.csproj", "{23CAB837-62FF-4C6B-A075-2A02BD993856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{74944017-EA8B-40E6-8596-E4AF666E2555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F55DB99B-9365-4D52-8C11-DDECBF3104C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{06FBECEB-EEB8-4D1B-9A33-A7818EFD8850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{B1A86A66-F16C-4A78-BEFB-45231DD20AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.UnitTest", "CSRTool.UnitTest\CSRTool.UnitTest.csproj", "{1B207276-ED44-4413-B657-A36D9BEAD40E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.IntegrationTest", "CSRTool.IntegrationTest\CSRTool.IntegrationTest.csproj", "{7822F234-B3EC-4729-ADFA-83F5BEECFE6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.Dependencies.Repositories", "CSRTool.Dependencies.Repositories\CSRTool.Dependencies.Repositories.csproj", "{2732643D-B483-4956-B9F5-139D07819002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.Dependencies.ApplicationServices", "CSRTool.Dependencies.ApplicationServices\CSRTool.Dependencies.ApplicationServices.csproj", "{7B07AB44-97BB-490C-B718-F8973983C619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.Common", "CSRTool.Common\CSRTool.Common.csproj", "{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.Core", "CSRTool.Core\CSRTool.Core.csproj", "{86D5CE7E-FFAD-437C-B00B-631B0AC16859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRTool.Core.Interfaces", "CSRTool.Core.Interfaces\CSRTool.Core.Interfaces.csproj", "{43B78F27-DBCB-4D6C-B5C2-D311C699D919}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23CAB837-62FF-4C6B-A075-2A02BD993856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CAB837-62FF-4C6B-A075-2A02BD993856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CAB837-62FF-4C6B-A075-2A02BD993856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CAB837-62FF-4C6B-A075-2A02BD993856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B207276-ED44-4413-B657-A36D9BEAD40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B207276-ED44-4413-B657-A36D9BEAD40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B207276-ED44-4413-B657-A36D9BEAD40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B207276-ED44-4413-B657-A36D9BEAD40E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7822F234-B3EC-4729-ADFA-83F5BEECFE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7822F234-B3EC-4729-ADFA-83F5BEECFE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7822F234-B3EC-4729-ADFA-83F5BEECFE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7822F234-B3EC-4729-ADFA-83F5BEECFE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2732643D-B483-4956-B9F5-139D07819002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2732643D-B483-4956-B9F5-139D07819002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2732643D-B483-4956-B9F5-139D07819002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2732643D-B483-4956-B9F5-139D07819002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B07AB44-97BB-490C-B718-F8973983C619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B07AB44-97BB-490C-B718-F8973983C619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B07AB44-97BB-490C-B718-F8973983C619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B07AB44-97BB-490C-B718-F8973983C619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D5CE7E-FFAD-437C-B00B-631B0AC16859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D5CE7E-FFAD-437C-B00B-631B0AC16859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D5CE7E-FFAD-437C-B00B-631B0AC16859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D5CE7E-FFAD-437C-B00B-631B0AC16859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B78F27-DBCB-4D6C-B5C2-D311C699D919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B78F27-DBCB-4D6C-B5C2-D311C699D919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B78F27-DBCB-4D6C-B5C2-D311C699D919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B78F27-DBCB-4D6C-B5C2-D311C699D919}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23CAB837-62FF-4C6B-A075-2A02BD993856} = {74944017-EA8B-40E6-8596-E4AF666E2555}
+		{1B207276-ED44-4413-B657-A36D9BEAD40E} = {06FBECEB-EEB8-4D1B-9A33-A7818EFD8850}
+		{7822F234-B3EC-4729-ADFA-83F5BEECFE6F} = {06FBECEB-EEB8-4D1B-9A33-A7818EFD8850}
+		{2732643D-B483-4956-B9F5-139D07819002} = {B1A86A66-F16C-4A78-BEFB-45231DD20AF8}
+		{7B07AB44-97BB-490C-B718-F8973983C619} = {B1A86A66-F16C-4A78-BEFB-45231DD20AF8}
+		{E95086F4-6544-4757-8B4D-DC4DE2A9BFAE} = {F55DB99B-9365-4D52-8C11-DDECBF3104C1}
+		{86D5CE7E-FFAD-437C-B00B-631B0AC16859} = {F55DB99B-9365-4D52-8C11-DDECBF3104C1}
+		{43B78F27-DBCB-4D6C-B5C2-D311C699D919} = {F55DB99B-9365-4D52-8C11-DDECBF3104C1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://sesoco1939:8080/tfs/sos
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CSRTool.UnitTest\\CSRTool.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName1 = CSRToolWebApp.sln
+		SccProjectName1 = CSRTool.UnitTest
+		SccLocalPath1 = CSRTool.UnitTest
+		SccProjectUniqueName2 = CSRTool.IntegrationTest\\CSRTool.IntegrationTest.csproj
+		SccProjectTopLevelParentUniqueName2 = CSRToolWebApp.sln
+		SccProjectName2 = CSRTool.IntegrationTest
+		SccLocalPath2 = CSRTool.IntegrationTest
+		SccProjectUniqueName3 = CSRToolWebApp\\CSRTool.WebApp.csproj
+		SccProjectTopLevelParentUniqueName3 = CSRToolWebApp.sln
+		SccProjectName3 = CSRToolWebApp
+		SccLocalPath3 = CSRToolWebApp
+		SccProjectUniqueName4 = CSRTool.Dependencies.Repositories\\CSRTool.Dependencies.Repositories.csproj
+		SccProjectTopLevelParentUniqueName4 = CSRToolWebApp.sln
+		SccProjectName4 = CSRTool.Dependencies.Repositories
+		SccLocalPath4 = CSRTool.Dependencies.Repositories
+		SccProjectUniqueName5 = CSRTool.Dependencies.ApplicationServices\\CSRTool.Dependencies.ApplicationServices.csproj
+		SccProjectTopLevelParentUniqueName5 = CSRToolWebApp.sln
+		SccProjectName5 = CSRTool.Dependencies.ApplicationServices
+		SccLocalPath5 = CSRTool.Dependencies.ApplicationServices
+		SccProjectUniqueName6 = CSRTool.Common\\CSRTool.Common.csproj
+		SccProjectTopLevelParentUniqueName6 = CSRToolWebApp.sln
+		SccProjectName6 = CSRTool.Common
+		SccLocalPath6 = CSRTool.Common
+		SccProjectUniqueName7 = CSRTool.Core\\CSRTool.Core.csproj
+		SccProjectTopLevelParentUniqueName7 = CSRToolWebApp.sln
+		SccProjectName7 = CSRTool.Core
+		SccLocalPath7 = CSRTool.Core
+		SccProjectUniqueName8 = CSRTool.Core.Interfaces\\CSRTool.Core.Interfaces.csproj
+		SccProjectTopLevelParentUniqueName8 = CSRToolWebApp.sln
+		SccProjectName8 = CSRTool.Core.Interfaces
+		SccLocalPath8 = CSRTool.Core.Interfaces
+	EndGlobalSection
+EndGlobal

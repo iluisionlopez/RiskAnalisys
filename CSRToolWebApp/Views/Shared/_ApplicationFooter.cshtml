@@ -1,0 +1,15 @@
+﻿@using CSRToolWebApp.Models
+
+@{
+    //  The default constructor will get assembly info for currently executing assembly
+    
+    //  Change the assembly/application info via "Assembly Information" dialog box.
+    //  (right click on assembly in Solution Explorer and chose "Properties", then navigate to
+    //  "Application" tab and press "Assembly Information..." button.
+    
+    AssemblyInfo assemblyInfo = new AssemblyInfo();
+}
+
+<div class="container portal-footer">
+    @assemblyInfo.Copyright | @assemblyInfo.Title
+</div>

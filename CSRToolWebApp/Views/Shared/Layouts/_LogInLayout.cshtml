@@ -1,0 +1,64 @@
+﻿@using CSRToolWebApp.Common
+@using CSRToolWebApp.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="https://static.scania.com/prod/css/global/images/logos/favicon.ico">
+
+    @*  Scania Bootstrap *@
+    @Styles.Render("//static.scania.com/prod/css/global/ver20130920/scania-intranet-styles.css")
+    @Styles.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/css/scania-bootstrap.css")
+    @Styles.Render("//static.scania.com/prod/components/login/ver20140324/css/login.css")
+
+    @*  Local style sheet *@
+    @Styles.Render("~/Content/Local.css")
+
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/html5shiv.js")
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/respond.min.js")
+    @Scripts.Render("//static.scania.com/prod/js/global/ver20130920/scania-intranet-scripts.js")
+</head>
+
+<body class="bootstrap login" @(SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft ? "dir=rtl" : "")>
+    <div class="container portal-main-container">
+        @*  Header *@
+        @Html.Partial("_ApplicationHeader", new ApplicationHeaderOption() { ShowLogo = true, ShowLanguageDropDown = true })
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @*  Picture *@
+                <div class="jumbotron jumbo-header hidden-xs"></div>
+                
+                <div class="row">
+                    <div class="col-sm-6">@RenderBody()</div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default message-panel">
+                            <div class="panel-body">
+                                <h1>Welcome to @(new AssemblyInfo().Title)</h1>
+                                <p>
+                                    To log in to @(new AssemblyInfo().Title), please type your username and password in the sign in form and click 'Sign in'.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("//static.scania.com/prod/frameworks/jquery/jquery-1.10.2.min.js")
+    @Scripts.Render("//static.scania.com/prod/frameworks/bootstrap/ver20130930/js/bootstrap.min.js")
+    @Scripts.Render("~/scripts/jquery_extensions_center.js")
+    @Scripts.Render("~/scripts/Common.js")
+
+    @* Additional view scripts section (optional, will be set by/in views) *@
+    @RenderSection("additionalViewScripts", required: false)
+
+    @*  Used for "blud screen" and "Progress message" *@
+    @Html.Partial("_BlurScreenAndProgressMessage")
+</body>
+</html>

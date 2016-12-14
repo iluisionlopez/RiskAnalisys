@@ -1,0 +1,13 @@
+﻿@using CSRToolWebApp.Models
+@model CheckBoxListItem
+
+
+@*<label class="checkbox-inline" style="margin-right: 15px;" title="@Model.Comment" name="@Model.Name", id="@Model.ID"> 
+    @Html.CheckBoxFor(x => x.IsChecked, new { id = Model.ID, @class= "horizontal-align" }) @Model.Name 
+    @Html.HiddenFor(x => x.IsChecked)
+</label>*@
+
+@Html.CheckBoxFor(x => x.IsChecked, new { id = Model.ID, @class = "horizontal-align", data_type_name = Model.Name.Replace(" ", "")  })
+@Html.LabelFor(x=>x.IsChecked, Model.Name, new { style= "margin-right: 15px; font-weight: normal; ", title = Model.Comment })
+@Html.HiddenFor(x => x.Name)
+@Html.HiddenFor(x => x.ID)

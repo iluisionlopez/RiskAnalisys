@@ -1,0 +1,7 @@
+﻿@using CSRToolWebApp.Common
+@using CSRToolWebApp.Models
+
+@foreach (UserMessage message in Helper.GlobalUserMessages.GetAll())
+{
+    @Html.Partial("_UserMessage", message)
+}

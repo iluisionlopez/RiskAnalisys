@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="698753bcce7b4b22a6ad5ed769ae4809" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="CSRToolEntities.Answer" Width="1.5" PointX="8.25" PointY="6" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentCustomer" Width="2.75" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentCustomerQuestionAnswer" Width="1.875" PointX="12.75" PointY="14.875" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentCustomerWebScan" Width="1.5" PointX="12.75" PointY="18.625" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentOfferType" Width="1.5" PointX="8.75" PointY="23.875" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentSupplier" Width="2.5" PointX="9.25" PointY="12" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentSupplierQuestionAnswer" Width="1.5" PointX="15.5" PointY="11.875" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentSupplierWebScan" Width="1.5" PointX="15.5" PointY="14.75" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentTransactionType" Width="1.5" PointX="12.75" PointY="12" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentType" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="CSRToolEntities.CaseType" Width="1.5" PointX="3" PointY="25.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.Customer" Width="1.5" PointX="3" PointY="18.625" />
+        <EntityTypeShape EntityType="CSRToolEntities.Index" Width="1.5" PointX="5.25" PointY="8.625" />
+        <EntityTypeShape EntityType="CSRToolEntities.IndexType" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.Question" Width="1.5" PointX="8.25" PointY="1.125" />
+        <EntityTypeShape EntityType="CSRToolEntities.QuestionAnswer" Width="1.5" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="CSRToolEntities.RiskCategory" Width="1.5" PointX="8.25" PointY="31.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.RiskCategoryIndexType" Width="1.5" PointX="15.5" PointY="17.875" />
+        <EntityTypeShape EntityType="CSRToolEntities.RiskCategoryQuestion" Width="1.5" PointX="10.5" PointY="3.875" />
+        <EntityTypeShape EntityType="CSRToolEntities.Sector" Width="1.5" PointX="3" PointY="22" />
+        <EntityTypeShape EntityType="CSRToolEntities.Supplier" Width="1.5" PointX="7" PointY="27.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.Territory" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="CSRToolEntities.TerritoryType" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="CSRToolEntities.TransactionType" Width="1.5" PointX="10.5" PointY="7.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.User" Width="1.5" PointX="0.5" PointY="13.375" />
+        <EntityTypeShape EntityType="CSRToolEntities.UserGroup" Width="1.5" PointX="12.75" PointY="8.5" />
+        <EntityTypeShape EntityType="CSRToolEntities.WebScanType" Width="1.5" PointX="10.5" PointY="21" />
+        <EntityTypeShape EntityType="CSRToolEntities.Version" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="CSRToolEntities.AssessmentTypeQuestion" Width="2.25" PointX="12.75" PointY="4.5" />
+        <AssociationConnector Association="CSRToolEntities.FK_QuestionAnswer_Answer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_AssessmentType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_CaseType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_ChangedByUser" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_CreatedByUser" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_Customer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_Sector" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_Territory" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_User" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomer_Version" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomerQuestionAnswer_AssessmentCustomer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentOfferType_AssessmentCustomer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentTransactionType_AssessmentCustomer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentWebScan_AssessmentCustomer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomerQuestionAnswer_QuestionAnswer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentCustomerWebScan_WebScanType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_AssessmentType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_CaseType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_ChangedByUser" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_CreatedByUser" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_Sector" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_Supplier" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_Territory" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_User" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_Version" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplierQuestionAnswer_AssessmentSupplier" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentWebScan_AssessmentSupplier" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplierQuestionAnswer_QuestionAnswer" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplierWebScan_WebScan" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentTransactionType_TransactionType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentTypeQuestion_AssessmentType" />
+        <AssociationConnector Association="CSRToolEntities.FK_Index_IndexType" />
+        <AssociationConnector Association="CSRToolEntities.FK_Index_Territory" />
+        <AssociationConnector Association="CSRToolEntities.FK_Index_Version" />
+        <AssociationConnector Association="CSRToolEntities.FK_RiskCategoryIndexType_IndexType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentTypeQuestion_Question" />
+        <AssociationConnector Association="CSRToolEntities.FK_QuestionAnswer_Question" />
+        <AssociationConnector Association="CSRToolEntities.FK_RiskCategoryQuestion_Question" />
+        <AssociationConnector Association="CSRToolEntities.FK_RiskCategoryIndexType_RiskCategory" />
+        <AssociationConnector Association="CSRToolEntities.FK_RiskCategoryQuestion_RiskCategory" />
+        <AssociationConnector Association="CSRToolEntities.FK_Territory_ChangedBy" />
+        <AssociationConnector Association="CSRToolEntities.FK_Territory_CreatedBy" />
+        <AssociationConnector Association="CSRToolEntities.FK_Territory_TerritoryType" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentTypeQuestion_TransactionType" />
+        <EntityTypeShape EntityType="CSRToolEntities.SupplyChain" Width="1.5" PointX="16.375" PointY="7" />
+        <AssociationConnector Association="CSRToolEntities.FK_AssessmentSupplier_SupplyChain" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

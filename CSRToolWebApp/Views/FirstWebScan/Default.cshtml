@@ -1,0 +1,44 @@
+﻿@using CSRToolWebApp.Common
+@using CSRToolWebApp.Models
+
+@{
+    ViewBag.Title = "Info";
+
+}
+
+@section breadCrumbs{
+    @Html.Partial("_BreadCrumbs", new BreadCrumbs()
+{
+    Items = new List<BreadCrumb>() {    new BreadCrumb("Home", Url.Action("Default", "Home")),
+                                        new BreadCrumb("WebScan", true)}
+                                                    })
+}
+
+<h1>Instructions/explanations</h1>
+
+<p class="lead">
+<p>
+    1.      Open www.google.com. Copy-paste the search string from Web scan cell.
+<br/>
+    2.      For each above, review the first 20 hits on google.  Look at information from 2012, 2013, 2014 and 2015. Focus primarily on information in English.
+    <br />
+    3.   No negative information --> "No negative information found" in the drop-down menu.
+    <br />
+    4.   Yes, negative information found --> check the following<br />
+    a.   Check the following:<br />
+    a.    Is it recent info, i.e. from 2012-2015?<br />
+    b.  Is it from a credible source of information, i.e. newspaper, UN and other multilateral development banks, international NGO?<br />
+    <br />
+    4:1. If yes to 4a. and/or 4b. --> Yes [appropriate option] in the drop-down menu and provide the following information in the comment field below:<br />
+    1.      Source of information and which year it was posted.<br />
+    2.      Short summary of criticism (3-5 sentences)<br />
+    3.      Weblinks<br />
+    If you find a lot of negative information, just list the weblinks.
+    <br />
+    The full search should take you maximum 20 minutes per transaction, i.e. both company and project. If there is no negative information then it should take about 10 minutes.
+    If it gets complicated, contact the Group Sustainability Manager at CA at any point and we’ll help you.
+    <br />
+
+
+</p>
+

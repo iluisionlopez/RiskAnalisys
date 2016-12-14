@@ -1,0 +1,57 @@
+﻿@using CSRToolWebApp.Models
+@using CSRToolWebApp.Common
+
+@model UserModel
+
+@{
+    bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+    ViewBag.Title = "User info";
+    Layout = "~/Views/Shared/Layouts/_PopUpLayout.cshtml";
+}
+
+<h2>@Model.DisplayName</h2>
+
+<div class="row">
+    <div class="col-xs-5">*** Username: ***</div>
+    <div class="col-xs-7">@Model.Id</div>
+</div>
+<div class="row">
+    <div class="col-xs-5">*** Firstname: ***</div>
+    <div class="col-xs-7">@Model.FirstName</div>
+</div>
+<div class="row">
+    <div class="col-xs-5">*** Lastname: ***</div>
+    <div class="col-xs-7">@Model.LastName</div>
+</div>
+<div class="row">
+    <div class="col-xs-5">*** Email address: ***</div>
+    <div class="col-xs-7">@Model.Email</div>
+</div>
+<div class="row">
+    <div class="col-xs-5">*** Telephone number: ***</div>
+    <div class="col-xs-7">@Model.Phone</div>
+</div>
+
+
+<div class="row"><div class="col-xs-11"><hr /></div></div>
+
+<div class="row">
+    @if (_isRTL)
+    {
+        <div class="col-xs-11">
+            <button class="btn btn-default btn-primary" type="button" onclick="window.close();">Close</button>
+        </div>
+    }
+    else
+    {
+        <div class="col-xs-11">
+            <button class="btn btn-default btn-primary" type="button" onclick="window.close();">Close</button>
+        </div>
+    }
+</div>
+
+<br />
+
+@section additionalViewScripts{
+    @*  Put your additional scripts here *@
+}

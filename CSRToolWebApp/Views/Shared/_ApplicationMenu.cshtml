@@ -1,0 +1,48 @@
+﻿@using CSRToolWebApp.Common
+
+@{
+    bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+}
+
+@functions
+{
+    public string GetSelectedCssClass(string menuItemName)
+    {
+        return (menuItemName == Helper.Request.GetControllerName() ? "active" : "");
+    }
+}
+
+<div class="row hidden-xs">
+    <div class="col-md-12">
+        <nav class="navbar navbar-default portal-navigation" role="navigation">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                @if (_isRTL)
+                {
+                    <ul class="nav navbar-nav">
+                        <button class="btn btn-sm btn-default" type="button" id="maximize-button"><span id="maximize-icon" class="icon-fullscreen"></span></button>&nbsp;
+                    </ul>
+                    <ul id="ApplicationMenu" class="nav navbar-nav navbar-right rtl">
+                        @*<li class="@GetSelectedCssClass("FirstWebScan")"><a href="/FirstWebScan">WebScan</a></li>*@
+                        @*<li class="@GetSelectedCssClass("Info")"><a href="/Info">Info</a></li>*@
+                        <li class="@GetSelectedCssClass("Purchasing")"><a href="/Purchasing">Supplier Assessment</a></li>
+                        <li class="@GetSelectedCssClass("Sales")"><a href="/Sales">Customer Assessment</a></li>
+                        <li class="@GetSelectedCssClass("Home")"><a href="/Home">Home</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav">
+                        <li class="@GetSelectedCssClass("Home")"><a href="/Home">Home</a></li>
+                        <li class="@GetSelectedCssClass("Sales")"><a href="/Sales">Customer Assessment</a></li>
+                        <li class="@GetSelectedCssClass("Purchasing")"><a href="/Purchasing">Supplier Assessment</a></li>
+                        @*<li class="@GetSelectedCssClass("Info")"><a href="/Info">Info</a></li>*@
+                        @*<li class="@GetSelectedCssClass("FirstWebScan")"><a href="/FirstWebScan">WebScan</a></li>*@
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <button class="btn btn-sm btn-default" type="button" id="maximize-button"><span id="maximize-icon" class="icon-fullscreen"></span></button>
+                    </ul>
+                }
+            </div>
+        </nav>
+    </div>
+</div>

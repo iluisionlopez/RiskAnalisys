@@ -1,0 +1,31 @@
+﻿@using CSRToolWebApp.Models
+
+@model BreadCrumbs
+
+@*  Important! Do NOT indent the "@:" lines because the indentation can mess up the whole element *@
+@helper SetSelected(BreadCrumb crumb)
+{
+    if (crumb.Selected)
+    {
+@:class="active"
+    }
+}
+
+@if (Model != null && Model.Items.Count > 0)
+{
+    <ol class="breadcrumb">
+        @foreach (BreadCrumb crumb in Model.Items)
+        {
+            <li @SetSelected(crumb)>
+                @if (!String.IsNullOrEmpty(crumb.Url))
+                {
+                    <a href="@crumb.Url">@crumb.Text</a>
+                }
+                else
+                {
+                    @crumb.Text   
+                }
+            </li>
+        }
+    </ol>
+}

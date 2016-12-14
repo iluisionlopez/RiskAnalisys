@@ -1,0 +1,480 @@
+Info - 2016-11-11 08:32:02
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.MvcApplication.Application_Start
+SessionId:        
+Message:          Application started
+
+
+Info - 2016-11-11 08:32:03
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/users
+
+
+Info - 2016-11-11 08:32:05
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Controllers.HomeController.LogIn
+SessionId:        e1tionu0jd3ysf312cmx2v3a
+Message:          User 'afofzj' logged in
+
+
+Info - 2016-11-11 08:32:05
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/assessmentcustomers/?user=0f3ce48f-496a-465a-a807-1c7ff3b84606
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=5059d2c4-f238-4e9b-b6a8-b534b3c95d84
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=be5851db-1a0b-4b1f-9b4d-675faca8db9d
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=2f7443ce-9d87-4a19-ab0f-1ad4b6e6352b
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=39a2639d-8f5b-4787-9f65-c8725136d937
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=07728f73-8928-4c4a-bcca-50204d5caf22
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=d880f61d-bbf8-4355-b5c3-8cb5eed360c1
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=f10dfb82-0d39-4bd2-b438-b2e8985d9343
+
+
+Info - 2016-11-11 08:32:08
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=9fd57cb9-2b89-43a8-9f3f-2d2ece1f29c8
+
+
+Info - 2016-11-11 08:32:09
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=cffbe385-6f76-487c-9825-08534db21b54
+
+
+Info - 2016-11-11 08:32:09
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=5059d2c4-f238-4e9b-b6a8-b534b3c95d84
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=79e0c072-fad1-48b2-8c79-d925f2c5adfe
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=bdb51f6d-b0a3-4c24-91e6-569ff33b36c2
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=be5851db-1a0b-4b1f-9b4d-675faca8db9d
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=f10dfb82-0d39-4bd2-b438-b2e8985d9343
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=29a5fd63-4683-4a64-97ca-41adb0f6689e
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=5059d2c4-f238-4e9b-b6a8-b534b3c95d84
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=2f7443ce-9d87-4a19-ab0f-1ad4b6e6352b
+
+
+Info - 2016-11-11 08:32:10
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/customerbyid/?customerId=1e330312-c964-461d-92b5-6e2ee45a2c4b
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/assessmentsuppliers/?user=0f3ce48f-496a-465a-a807-1c7ff3b84606
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=23e2d08e-7720-45bc-8264-a93b8be804e4
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:11
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=4081380b-5e14-4f8e-92ae-b150d866a127
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=e34e920d-0659-4da0-ba98-0a145286bfcf
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=f8954fa1-f69f-418e-afd5-5cb76c47d1ce
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+
+Info - 2016-11-11 08:32:12
+===================================================
+CallingAssembly:  CSRToolWebApp.dll
+CallingMethod:    CSRToolWebApp.Common.RestService.Get
+SessionId:        
+Message:          GET http://localhost/CSRToolService.svc/rest/supplierbyid/?Id=c371f4b9-c61c-4994-b164-07b4beb6b5bd
+
+

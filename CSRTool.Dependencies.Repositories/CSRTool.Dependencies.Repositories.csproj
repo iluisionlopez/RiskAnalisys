@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2732643D-B483-4956-B9F5-139D07819002}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSRTool.Dependencies.Repositories</RootNamespace>
+    <AssemblyName>CSRTool.Dependencies.Repositories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\Answer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentCustomer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentCustomerQuestionAnswer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentCustomerRepository.cs" />
+    <Compile Include="EntityFramework\AssessmentCustomerWebScan.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentOfferType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentSupplier.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentSupplierQuestionAnswer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentSupplierRepository.cs" />
+    <Compile Include="EntityFramework\AssessmentSupplierWebScan.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentTransactionType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentTypeQuestion.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AssessmentTypeRepository.cs" />
+    <Compile Include="EntityFramework\AssessmentTypeQuestionRepository.cs" />
+    <Compile Include="EntityFramework\CaseType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CSRTool.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Customer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Index.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\IndexType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\OfferType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Question.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\QuestionAnswer.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\QuestionAnswerRepository.cs" />
+    <Compile Include="EntityFramework\CSRTool.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSRTool.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\CSRTool.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSRTool.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\QuestionRepository.cs" />
+    <Compile Include="EntityFramework\IndexTypeRepository.cs" />
+    <Compile Include="EntityFramework\RiskCategory.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RiskCategoryIndexType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RiskCategoryQuestion.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RiskCategoryRepository.cs" />
+    <Compile Include="EntityFramework\Sector.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SectorRepository.cs" />
+    <Compile Include="EntityFramework\AnswerRepository.cs" />
+    <Compile Include="EntityFramework\Supplier.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SupplierRepository.cs" />
+    <Compile Include="EntityFramework\SupplyChain.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SupplyChainRepository.cs" />
+    <Compile Include="EntityFramework\Territory.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TerritoryType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TransactionType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TransactionTypeRepository.cs" />
+    <Compile Include="EntityFramework\CaseTypeRepository.cs" />
+    <Compile Include="EntityFramework\CustomerRepository.cs" />
+    <Compile Include="EntityFramework\OfferTypeRepository.cs" />
+    <Compile Include="EntityFramework\User.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserGroup.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\UserRepository.cs" />
+    <Compile Include="EntityFramework\Version.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\WebScanRepository.cs" />
+    <Compile Include="EntityFramework\WebScanType.cs">
+      <DependentUpon>CSRTool.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\WebScanTypeRepository.cs" />
+    <Compile Include="EntityFramework\VersionRepository.cs" />
+    <Compile Include="EntityFramework\IndexRepository.cs" />
+    <Compile Include="EntityFramework\TerritoryRepository.cs" />
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EntityFramework\CSRTool.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CSRTool.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityFramework\CSRTool.edmx.diagram">
+      <DependentUpon>CSRTool.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSRTool.Common\CSRTool.Common.csproj">
+      <Project>{e95086f4-6544-4757-8b4d-dc4de2a9bfae}</Project>
+      <Name>CSRTool.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSRTool.Core.Interfaces\CSRTool.Core.Interfaces.csproj">
+      <Project>{43b78f27-dbcb-4d6c-b5c2-d311c699d919}</Project>
+      <Name>CSRTool.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSRTool.Core\CSRTool.Core.csproj">
+      <Project>{86d5ce7e-ffad-437c-b00b-631b0ac16859}</Project>
+      <Name>CSRTool.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSRTool.Dependencies.ApplicationServices\CSRTool.Dependencies.ApplicationServices.csproj">
+      <Project>{7b07ab44-97bb-490c-b718-f8973983c619}</Project>
+      <Name>CSRTool.Dependencies.ApplicationServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityFramework\CSRTool.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSRTool.edmx</DependentUpon>
+      <LastGenOutput>CSRTool.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\CSRTool.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSRTool.edmx</DependentUpon>
+      <LastGenOutput>CSRTool.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿@using CSRToolWebApp.Models
+@model IEnumerable<QuestionModel>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <label class="control-label" id="@Model.ToList()[i].Id" data-transaction-type="@Model.ToList()[i].TransactionTypeId" title="@Model.ToList()[i].Comment">
+                @Model.ToList()[i].Text
+            </label>
+        </div>
+        <div class="col-lg-10">
+            @Html.DropDownListFor(m => m.ToList()[i].SelectedValue, new SelectList(Model.ToList()[i].Answers, "Value", "Text", new { ID = "Id" }), new { @class = "form-control answer-selector", ID = Model.ToList()[i].Id, Name = Model.ToList()[i].Name })
+            @Html.HiddenFor(m => m.ToList()[i].SelectedValue, new { data_question = Model.ToList()[i].Name })
+        </div>
+        <div class="col-lg-2 col-xs-2">
+            <input id="answer-@Model.ToList()[i].Id" name="@Model.ToList()[i].Name" class="form-control answer-value @Model.ToList()[i].ClassName" type="number" value="@Model.ToList()[i].SelectedValue" text="@Model.ToList()[i].SelectedValue" disabled />
+        </div>
+    </div>
+}

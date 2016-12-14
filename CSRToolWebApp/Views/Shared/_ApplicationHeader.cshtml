@@ -1,0 +1,166 @@
+﻿@using CSRToolWebApp.Models
+@using CSRToolWebApp.Common
+
+@model ApplicationHeaderOption
+
+@{
+    //  The default constructor will get assembly info for currently executing assembly
+
+    //  Change the assembly/application info via "Assembly Information" dialog box.
+    //  (right click on assembly in Solution Explorer and chose "Properties", then navigate to
+    //  "Application" tab and press "Assembly Information..." button.
+
+    AssemblyInfo assemblyInfo = new AssemblyInfo();
+    bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+}
+
+@if (_isRTL)
+{
+    <div class="row" id="prototype-header">
+        <div class="col-md-7">
+            <ul class="navbar-left header-links hidden-print hidden-xs">
+                @if (Model.ShowLogOutLink && Helper.Application.LoginEnabled && SessionHandler.LoggedInUser != null)
+                {
+                    <li><a href="@Url.RouteUrl("LogOut")"><i class="icon-off"></i><span> Log out</span></a></li>
+                }
+                @*@if (Model.ShowLanguageDropDown)
+                {
+                    <li>@Html.Partial("_ChangeLanguageDropdown")</li>
+                }*@
+                @if (Model.ShowAboutLink)
+                {
+                    <li><a href="javascript:ShowAbout();">ABOUT</a></li>
+                }
+                @if (Model.ShowHelpLink)
+                {
+                    <li><a href="javascript:Showinfo();"><i class="icon-info-sign btn-lg"></i><span>INFO</span></a></li>
+                }
+                @if (Model.ShowFAQLink)
+                {
+                    <li><a href="javascript:ShowFAQ();">FAQ</a></li>
+                }
+                @if (Model.ShowLoggedInUserInfo && Helper.Application.LoginEnabled && SessionHandler.LoggedInUser != null)
+                {
+                    <li><a href="javascript:ShowUserInfo();"><i class="icon-user btn-lg"></i><span>@SessionHandler.LoggedInUser.UserName</span></a></li>
+                }
+
+            </ul>
+        </div>
+        <div class="col-md-5">
+            @if (Model.ShowLogo)
+            {
+                <span class="scania-portal-logo pull-right"></span>
+            }
+            @if (Model.ShowApplicationTitle)
+            {
+                <div class="portal-heading pull-right">&nbsp;&nbsp;@assemblyInfo.Title</div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="row" id="prototype-header">
+        <div class="col-md-5">
+            @if (Model.ShowLogo)
+            {
+                <span class="scania-portal-logo"></span>
+            }
+            @if (Model.ShowApplicationTitle)
+            {
+                <div class="portal-heading">@assemblyInfo.Title</div>
+            }
+        </div>
+        <div class="col-md-7">
+            <ul class="navbar-right header-links hidden-print hidden-xs">
+                @if (Model.ShowLoggedInUserInfo && Helper.Application.LoginEnabled && SessionHandler.LoggedInUser != null)
+                {
+                    <li><a href="javascript:ShowUserInfo();"><i class="icon-user btn-lg"></i><span>@SessionHandler.LoggedInUser.UserName</span></a></li>
+                }
+                @if (Model.ShowFAQLink)
+                {
+                    <li><a href="javascript:ShowFAQ()">FAQ</a></li>
+                }
+                @if (Model.ShowHelpLink)
+                {
+                    <li><a href="javascript:ShowInfo();"><i class="icon-info-sign btn-lg"></i><span>INFO</span></a></li>
+                }
+                @if (Model.ShowAboutLink)
+                {
+                    <li><a href="javascript:ShowAbout();">ABOUT</a></li>
+                }
+                @*@if (Model.ShowLanguageDropDown)
+                {
+                    <li>@Html.Partial("_ChangeLanguageDropdown")</li>
+                }*@
+                @if (Model.ShowLogOutLink && Helper.Application.LoginEnabled && SessionHandler.LoggedInUser != null)
+                {
+                    <li><a href="@Url.RouteUrl("LogOut")"><i class="icon-off"></i><span> Log out</span></a></li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+@if (Model.ShowLoggedInUserInfo)
+{
+    <script type="text/jscript" language="javascript">
+        function ShowUserInfo() {
+            var height = 600;
+            var width = 600;
+
+            //  Center on current screen
+            var top = (($(window).height() - height) / 2) + (window.screenY || window.screenTop || 0)
+            var left = (($(window).width() - width) / 2) + (window.screenX || window.screenLeft || 0);
+
+            window.open('@(Url.RouteUrl("UserInfo"))', null, 'left=' + left + ', top=' + top + ', height=' + height + ', width=' + width + ', status=no, resizable=no, scrollbars=yes, toolbar=no, location=no, menubar=no');
+        }
+    </script>
+}
+
+@if (Model.ShowAboutLink)
+{
+    <script type="text/jscript" language="javascript">
+        function ShowAbout() {
+            var height = 600;
+            var width = 500;
+
+            //  Center on current screen
+            var top = (($(window).height() - height) / 2) + (window.screenY || window.screenTop || 0)
+            var left = (($(window).width() - width) / 2) + (window.screenX || window.screenLeft || 0);
+
+            window.open('@(Url.Action("About", "Home"))', null, 'left=' + left + ', top=' + top + ', height=' + height + ', width=' + width + ', status=no, resizable=no, scrollbars=yes, toolbar=no, location=no, menubar=no');
+        }
+    </script>
+}
+
+@if (Model.ShowHelpLink)
+{
+    <script type="text/jscript" language="javascript">
+        function ShowInfo() {
+            var height = 600;
+            var width = 980;
+
+            //  Center on current screen
+            var top = (($(window).height() - height) / 2) + (window.screenY || window.screenTop || 0)
+            var left = (($(window).width() - width) / 2) + (window.screenX || window.screenLeft || 0);
+
+            window.open('@(Url.Action("Info", "Home"))', null, 'left=' + left + ', top=' + top + ', height=' + height + ', width=' + width + ', status=no, resizable=no, scrollbars=yes, toolbar=no, location=no, menubar=no');
+        }
+    </script>
+}
+@if (Model.ShowFAQLink)
+{
+    <script type="text/jscript" language="javascript">
+        function ShowFAQ() {
+            var height = 600;
+            var width = 980;
+
+            //  Center on current screen
+            var top = (($(window).height() - height) / 2) + (window.screenY || window.screenTop || 0)
+            var left = (($(window).width() - width) / 2) + (window.screenX || window.screenLeft || 0);
+
+            window.open('@(Url.Action("FAQ", "Home"))', null, 'left=' + left + ', top=' + top + ', height=' + height + ', width=' + width + ', status=no, resizable=no, scrollbars=yes, toolbar=no, location=no, menubar=no');
+        }
+    </script>
+}

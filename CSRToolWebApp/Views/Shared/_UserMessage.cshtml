@@ -1,0 +1,71 @@
+﻿@using CSRToolWebApp.Models
+@using CSRToolWebApp.Common
+
+@model UserMessage
+
+@{
+    bool _isRTL = SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft;
+}
+
+@functions
+{
+    public string GetAlertCssClass()
+    {
+        switch (Model.Type)
+        {
+            case UserMessageType.Info: return "alert-info";
+            case UserMessageType.Warning: return "alert-warning";
+            case UserMessageType.Error: return "alert-danger";
+            case UserMessageType.Success: return "alert-success";
+            default: return "";
+        }
+    }
+    
+    public string GetIconCssClass()
+    {
+        switch (Model.Type)
+        {
+            case UserMessageType.Info: return "icon-info-sign";
+            case UserMessageType.Warning: return "icon-warning-sign";
+            case UserMessageType.Error: return "icon-minus-sign";
+            case UserMessageType.Success: return "icon-ok-sign";
+            default: return "";
+        }
+    }
+}
+
+@if (Model != null && Model.GetType().Equals(typeof(UserMessage)))
+{
+    if (_isRTL)
+    {
+        <div class="alert @GetAlertCssClass()">
+            <i class="@GetIconCssClass() pull-right"></i>
+            @if (!String.IsNullOrEmpty(Model.Title))
+            {
+                <strong class="pull-right">@Model.Title</strong>
+            }
+            <span>&nbsp;@(Model.Message)&nbsp;</span>
+            @if (Model.ShowCloseButton)
+            {
+                //  The "removeParentOnClick" triggers javascript in the /Scripts/Common.js that closes the user message box
+                <button class="btn close pull-left" type="button" removeparentonclick>x</button>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert @GetAlertCssClass()">
+            <i class="@GetIconCssClass()"></i>
+            @if (!String.IsNullOrEmpty(Model.Title))
+            {
+                <strong>@Model.Title</strong>
+            }
+            <span>&nbsp;@(Model.Message)&nbsp;</span>
+            @if (Model.ShowCloseButton)
+            {
+                //  The "removeParentOnClick" triggers javascript in the /Scripts/Common.js that closes the user message box
+                <button class="btn close" type="button" removeparentonclick>x</button>
+            }
+        </div>
+    }
+}

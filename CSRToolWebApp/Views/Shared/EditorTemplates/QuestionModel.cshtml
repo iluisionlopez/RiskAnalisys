@@ -1,0 +1,18 @@
+﻿@using CSRToolWebApp.Models
+@model QuestionModel
+
+<div class="row">
+    <div class="col-lg-12">
+        <label class="control-label" id="@Model.Id" data-transaction-type="@Model.TransactionTypeId">
+            @Model.Text            
+        </label>
+    </div>
+    <div class="col-lg-10">
+        @Html.DropDownListFor(m => m.SelectedAnswerId, new SelectList(Model.Answers, "Value", "Text"), new { @class = "form-control answer-selector", Name = @Model.Id, Value = @ })
+        @Html.HiddenFor(m=>m.SelectedAnswerId, new { Id = Model.ToList()[i].Name })
+        @*@Html.EditorFor(m=>m.Answers)*@
+       </div>
+    <div class="col-lg-2 col-xs-2">
+        <input id="answer-@Model.Id" name="@Model.Id" class="form-control" type="number" value="" text="" disabled />
+    </div>
+</div>

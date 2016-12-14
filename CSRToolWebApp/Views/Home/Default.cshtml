@@ -1,0 +1,43 @@
+﻿@using CSRToolWebApp.Models
+
+@model AssessmentModel
+
+<div class="container">
+    <div class="panel">
+        <h1 class="heading">Assesments</h1>
+        <p class="lead">CSR risks associated with customers</p>
+
+        <div class="table-responsive">
+            <button class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("NewAssessment","Sales")'">New Assessment of a Customer<span id="maximize-icon" class="icon-plus icon-2x" style="margin-left:10px;"></span></button>
+            <button class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("NewAssessment","Purchasing")'">New Assessment of a Supplier<span id="maximize-icon" class="icon-plus icon-2x" style="margin-left:10px;"></span></button>
+
+            <br />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Company assessed</th>
+                        <th>Created</th>
+                        <th>Updated</th>
+                        <th>Version</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var assessment in Model.AssessmentList)
+                    {
+                        <tr data-assessment-id="@assessment.AssessmentID">
+                            <td><a class="open-assessment" href="@Url.Action("GetAssessment", assessment.Controller, new { assessmentID = assessment.AssessmentID })">@assessment.AssessmnetName</a></td>
+                            <td>@assessment.DateCreated</td>
+                            <td>@assessment.DateChanged</td>
+                            <td data-version-id="@assessment.VersionId">@assessment.Version</td>                            
+                            <td>@assessment.Status</td>
+                            <td><a class="open-assessment" href="@Url.Action("GetAssessment", assessment.Controller, new { assessmentID = assessment.AssessmentID })"><span class="icon-edit icon-2x"></span></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

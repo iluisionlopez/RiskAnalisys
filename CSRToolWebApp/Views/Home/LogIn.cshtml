@@ -1,0 +1,62 @@
+﻿@using CSRToolWebApp.Common
+@using CSRToolWebApp.Models
+
+@model LogInInfo
+
+@{
+    if (SessionHandler.SelectedLanguage.TextInfo.IsRightToLeft)
+    {
+        Layout = "~/Views/Shared/Layouts/_LogInLayoutRTL.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/Layouts/_LogInLayout.cshtml";
+    }
+    
+    ViewBag.Title = "Log in";
+}
+
+<div class="panel panel-default login-panel">
+    <div class="panel-body">
+        <div class="col-sm-12">
+            @*  Error message, if any *@
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @Html.Partial("_UserMessage", (UserMessage)ViewBag.ErrorMessage)   
+            }
+            
+            <h3 class="underline">Sign in</h3>
+
+            @using (Html.BeginForm())
+            {
+                //  User name
+                <div class="form-group">
+                    <label class="control-label">User name:</label>
+                    <input id="inputUserId" name="UserId" class="form-control" type="text" placeholder="Username" value="@Model.UserId" />
+                </div>
+                
+                //  Password
+                <div class="form-group">
+                    <label class="control-label">Password:</label>
+                    <input name="Password" class="form-control" type="Password" placeholder="Password" />
+                </div>
+
+                //  Submit button
+                <div class="row login-buttons">
+                    <div class="col-sm-12">
+                        <button class="btn btn-md btn-primary btn-block" type="submit"><i class="icon-unlock"></i>Sign in</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section additionalViewScripts{
+    <script type="text/jscript" language="javascript">
+        $(document).ready(function () {
+            //  Set focus on user name
+            $("#inputUserId").focus();
+        });
+    </script>
+}

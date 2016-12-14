@@ -1,0 +1,34 @@
+﻿@using CSRToolWebApp.Models
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/Layouts/_PopUpLayout.cshtml";
+    AssemblyInfo info = new AssemblyInfo();
+}
+
+<h2>About</h2>
+
+<div class="row">
+    <div class="col-xs-11">
+        <p>@info.Description</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">Version:</div>
+    <div class="col-xs-8">@info.Version</div>
+</div>
+
+<div class="row"><div class="col-xs-11"><hr /></div></div>
+
+<div class="row">
+    <div class="col-xs-11">
+        <button class="btn btn-default btn-primary" type="button" onclick="window.close();">Close</button>
+    </div>
+</div>
+
+<br />
+
+@section additionalViewScripts{
+    @*  Put your additional scripts here *@
+}

@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalChecksTitle" xml:space="preserve">
+    <value>Part III: Additional Checks</value>
+  </data>
+  <data name="AssessorLabel" xml:space="preserve">
+    <value>Assessor</value>
+  </data>
+  <data name="AuditCommentLabel" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="AuditCommentSelection01" xml:space="preserve">
+    <value>Refused the Audit</value>
+  </data>
+  <data name="AuditCommentSelection02" xml:space="preserve">
+    <value>More than three major deviations</value>
+  </data>
+  <data name="AuditCommentSelection03" xml:space="preserve">
+    <value>Major deviations and performance clearly below country and industry average</value>
+  </data>
+  <data name="AuditCommentSelection04" xml:space="preserve">
+    <value>No major deviations and performance in line with country and industry average</value>
+  </data>
+  <data name="AuditCommentSelection05" xml:space="preserve">
+    <value>Performance significantly over average for industry and country, good example</value>
+  </data>
+  <data name="AuditorLabel" xml:space="preserve">
+    <value>Auditor</value>
+  </data>
+  <data name="AuditTitle" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="BuyerLabel" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
+  <data name="CaseTypeLabel" xml:space="preserve">
+    <value>Relationship</value>
+  </data>
+  <data name="CommodityLabel" xml:space="preserve">
+    <value>Commodity</value>
+  </data>
+  <data name="CountryLabel" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="CountryRiskFactor01" xml:space="preserve">
+    <value>Local environmental impact</value>
+  </data>
+  <data name="CountryRiskFactor10" xml:space="preserve">
+    <value>Corruption</value>
+  </data>
+  <data name="CountryRiskFactor11" xml:space="preserve">
+    <value>Corporate governance</value>
+  </data>
+  <data name="CountryRiskFactor12" xml:space="preserve">
+    <value>Democratic governance</value>
+  </data>
+  <data name="CountryRiskFactor02" xml:space="preserve">
+    <value>Child labour</value>
+  </data>
+  <data name="CountryRiskFactor03" xml:space="preserve">
+    <value>Forced or involuntary labour</value>
+  </data>
+  <data name="CountryRiskFactor04" xml:space="preserve">
+    <value>Discrimination in the work place</value>
+  </data>
+  <data name="CountryRiskFactor05" xml:space="preserve">
+    <value>Minority rights</value>
+  </data>
+  <data name="CountryRiskFactor06" xml:space="preserve">
+    <value>Occupational health and safety</value>
+  </data>
+  <data name="CountryRiskFactor07" xml:space="preserve">
+    <value>Freedom of assembly</value>
+  </data>
+  <data name="CountryRiskFactor08" xml:space="preserve">
+    <value>Freedom of opinion and expression</value>
+  </data>
+  <data name="CountryRiskFactor09" xml:space="preserve">
+    <value>Trade compliance</value>
+  </data>
+  <data name="CountryRiskTitle" xml:space="preserve">
+    <value>Country risk</value>
+  </data>
+  <data name="CustomerAssessmentFormTitle" xml:space="preserve">
+    <value>Customer Assessment Form</value>
+  </data>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>Business arrangements</value>
+  </data>
+  <data name="CustomerNameLabel" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Denmark" xml:space="preserve">
+    <value>Denmark</value>
+  </data>
+  <data name="ExistingCustomer" xml:space="preserve">
+    <value>Existing Customer</value>
+  </data>
+  <data name="ExistingSupplier" xml:space="preserve">
+    <value>Existing Supplier</value>
+  </data>
+  <data name="FirstRiskAssessmentTitle" xml:space="preserve">
+    <value>First Risk Assessment</value>
+  </data>
+  <data name="GeneralInformationTitle" xml:space="preserve">
+    <value>General Information</value>
+  </data>
+  <data name="NewAssessmentTitle" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="NewCustomer" xml:space="preserve">
+    <value>New Customer</value>
+  </data>
+  <data name="NewSupplier" xml:space="preserve">
+    <value>New Supplier</value>
+  </data>
+  <data name="Norway" xml:space="preserve">
+    <value>Norway</value>
+  </data>
+  <data name="OfferLabel" xml:space="preserve">
+    <value>Offer</value>
+  </data>
+  <data name="PerformanceTitle" xml:space="preserve">
+    <value>Part II: Performance</value>
+  </data>
+  <data name="ProjectNameLabel" xml:space="preserve">
+    <value>Project or site name</value>
+  </data>
+  <data name="Question01" xml:space="preserve">
+    <value>Environmental management</value>
+  </data>
+  <data name="Question10" xml:space="preserve">
+    <value>Is there evidence that the agent has performed the service?</value>
+  </data>
+  <data name="Question11" xml:space="preserve">
+    <value>Have I received a correct and verified end user certificate?</value>
+  </data>
+  <data name="Question12" xml:space="preserve">
+    <value>Is the sales person aware of the segment ethical guidelines?</value>
+  </data>
+  <data name="Question13" xml:space="preserve">
+    <value>Ethical business behaviour</value>
+  </data>
+  <data name="Question14" xml:space="preserve">
+    <value>Accept the segment specific requirements</value>
+  </data>
+  <data name="Question15" xml:space="preserve">
+    <value>Self Assessment</value>
+  </data>
+  <data name="Question16" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="Question17" xml:space="preserve">
+    <value>Cascading of demands to subtiers</value>
+  </data>
+  <data name="Question18" xml:space="preserve">
+    <value>Site location (human rights)</value>
+  </data>
+  <data name="Question02" xml:space="preserve">
+    <value>Occupational safety &amp; health procedures</value>
+  </data>
+  <data name="Question03" xml:space="preserve">
+    <value>Human rights program</value>
+  </data>
+  <data name="Question04" xml:space="preserve">
+    <value>Anti-bribery and anti-corruption</value>
+  </data>
+  <data name="Question05" xml:space="preserve">
+    <value>Site location (environment)</value>
+  </data>
+  <data name="Question06" xml:space="preserve">
+    <value>Site knowledge</value>
+  </data>
+  <data name="Question07" xml:space="preserve">
+    <value>Is there a clear explanation about why this agent´s services are needed?</value>
+  </data>
+  <data name="Question08" xml:space="preserve">
+    <value>Have I signed an agreement with the agent?</value>
+  </data>
+  <data name="Question09" xml:space="preserve">
+    <value>Have I properly and accurately documented and recorded all payments to the agent?</value>
+  </data>
+  <data name="ResponsibleSalesPersonLabel" xml:space="preserve">
+    <value>Responsible Sales Person</value>
+  </data>
+  <data name="RiskAssessmentQuestionsTitle" xml:space="preserve">
+    <value>Risk Assessment questions</value>
+  </data>
+  <data name="RiskTitle" xml:space="preserve">
+    <value>Part I: Risk</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ScaniaCompanyDepartmentLabel" xml:space="preserve">
+    <value>Selling department</value>
+  </data>
+  <data name="ScaniaSpecificTitle" xml:space="preserve">
+    <value>Scania specific</value>
+  </data>
+  <data name="Sector10Name" xml:space="preserve">
+    <value>Rubber</value>
+  </data>
+  <data name="Sector11Name" xml:space="preserve">
+    <value>Electrical</value>
+  </data>
+  <data name="Sector12Name" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="Sector13Name" xml:space="preserve">
+    <value>Other sector (no significant added risk)</value>
+  </data>
+  <data name="Sector01Name" xml:space="preserve">
+    <value>Paper &amp; pulp</value>
+  </data>
+  <data name="Sector02Name" xml:space="preserve">
+    <value>Mining</value>
+  </data>
+  <data name="Sector03Name" xml:space="preserve">
+    <value>Construction, building</value>
+  </data>
+  <data name="Sector04Name" xml:space="preserve">
+    <value>Iron and steel</value>
+  </data>
+  <data name="Sector05Name" xml:space="preserve">
+    <value>Chemical</value>
+  </data>
+  <data name="Sector06Name" xml:space="preserve">
+    <value>Textiles and leather</value>
+  </data>
+  <data name="Sector07Name" xml:space="preserve">
+    <value>Fuel, lubricants etc.</value>
+  </data>
+  <data name="Sector08Name" xml:space="preserve">
+    <value>Logistic services</value>
+  </data>
+  <data name="Sector09Name" xml:space="preserve">
+    <value>Plastics, foam etc.</value>
+  </data>
+  <data name="SectorLabel" xml:space="preserve">
+    <value>Sector or Industry</value>
+  </data>
+  <data name="SegmentLabel" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="SiteLabel" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="SpecificQuestionsTitle" xml:space="preserve">
+    <value>Specific question</value>
+  </data>
+  <data name="SupplierAssessmentFormTitle" xml:space="preserve">
+    <value>Supplier Assessment Form</value>
+  </data>
+  <data name="SupplierAssessmentQuestionsTitle" xml:space="preserve">
+    <value>Supplier Self Assessment questions</value>
+  </data>
+  <data name="SupplierLabel" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="SupplyChain1Name" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SupplyChain2Name" xml:space="preserve">
+    <value>No visits, pictures from site and written info received</value>
+  </data>
+  <data name="SupplyChain3Name" xml:space="preserve">
+    <value>Visited site, lacking info about labour laws &amp; working conditions</value>
+  </data>
+  <data name="SupplyChain4Name" xml:space="preserve">
+    <value>Visited site, labour laws are followed &amp; working conditions acceptable</value>
+  </data>
+  <data name="SupplyChainLabel" xml:space="preserve">
+    <value>Supply chain</value>
+  </data>
+  <data name="Sweden" xml:space="preserve">
+    <value>Sweden</value>
+  </data>
+  <data name="WebScan1Label" xml:space="preserve">
+    <value>Web Scan 1</value>
+  </data>
+  <data name="WebScan2Label" xml:space="preserve">
+    <value>Web Scan 2</value>
+  </data>
+  <data name="WebScanCheckLabel" xml:space="preserve">
+    <value>No negative information found</value>
+  </data>
+  <data name="WebScanTitle" xml:space="preserve">
+    <value>Web Scan</value>
+  </data>
+  <data name="WebSearchCommentLabel" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="WebSearchCommentSelection01" xml:space="preserve">
+    <value>Negative information found, credible source</value>
+  </data>
+  <data name="WebSearchCommentSelection02" xml:space="preserve">
+    <value>Negative information found, non credible source</value>
+  </data>
+  <data name="WebSearchCommentSelection03" xml:space="preserve">
+    <value>No negative information found</value>
+  </data>
+  <data name="WebSearchCommentSelection04" xml:space="preserve">
+    <value>(Not use it)No negative information found</value>
+  </data>
+  <data name="WebSearchInstruction" xml:space="preserve">
+    <value>Copy &amp; paste in search eng.</value>
+  </data>
+  <data name="WebSearchTitle" xml:space="preserve">
+    <value>Web search</value>
+  </data>
+  <data name="Question10Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question10Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question10Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question11Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question11Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question11Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question12Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question12Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question12Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question13Answer01" xml:space="preserve">
+    <value>Supplier clearly violates Scania´s principles of ethical business.</value>
+  </data>
+  <data name="Question13Answer02" xml:space="preserve">
+    <value>Supplier has no policies that supports ethical business behaviour</value>
+  </data>
+  <data name="Question13Answer03" xml:space="preserve">
+    <value>Supplier has policies that supports ethical business behaviour</value>
+  </data>
+  <data name="Question13Answer04" xml:space="preserve">
+    <value>Supplier has public policies and programs including training of employees </value>
+  </data>
+  <data name="Question13Answer05" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question14Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question14Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question14Answer03" xml:space="preserve">
+    <value>None exists</value>
+  </data>
+  <data name="Question14Answer04" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question15Answer01" xml:space="preserve">
+    <value>Started to do the SAQ but didn´t submit</value>
+  </data>
+  <data name="Question15Answer02" xml:space="preserve">
+    <value>Overall rating below 25%</value>
+  </data>
+  <data name="Question15Answer03" xml:space="preserve">
+    <value>No rating below 25%</value>
+  </data>
+  <data name="Question15Answer04" xml:space="preserve">
+    <value>Overall rating 25-50%</value>
+  </data>
+  <data name="Question15Answer05" xml:space="preserve">
+    <value>Overall rating 50-75%</value>
+  </data>
+  <data name="Question15Answer06" xml:space="preserve">
+    <value>Overall rating 75-100%</value>
+  </data>
+  <data name="Question16Answer01" xml:space="preserve">
+    <value>Refused the Audit</value>
+  </data>
+  <data name="Question16Answer02" xml:space="preserve">
+    <value>More than three major deviations</value>
+  </data>
+  <data name="Question16Answer03" xml:space="preserve">
+    <value>Major deviations and performance clearly below country and industry average</value>
+  </data>
+  <data name="Question16Answer04" xml:space="preserve">
+    <value>No major deviations and performance in line with country and industry average</value>
+  </data>
+  <data name="Question16Answer05" xml:space="preserve">
+    <value>Performance significantly over average for industry and country, good example</value>
+  </data>
+  <data name="Question17Answer01" xml:space="preserve">
+    <value>No supplier policy or supplier code of conduct</value>
+  </data>
+  <data name="Question17Answer02" xml:space="preserve">
+    <value>Supplier policy or code of conduct exist, but doesn´t cover all areas</value>
+  </data>
+  <data name="Question17Answer03" xml:space="preserve">
+    <value>Supplier policy or code of conduct cover all valid areas</value>
+  </data>
+  <data name="Question17Answer04" xml:space="preserve">
+    <value>Supplier policy or code of conduct cover all plant based purchasing</value>
+  </data>
+  <data name="Question17Answer05" xml:space="preserve">
+    <value>Supplier policy or code of conduct communicated in contractual terms</value>
+  </data>
+  <data name="Question17Answer06" xml:space="preserve">
+    <value>Contract support and processes to ensure effective implementation</value>
+  </data>
+  <data name="Question17Answer07" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question18Answer01" xml:space="preserve">
+    <value>Including reallocation of people</value>
+  </data>
+  <data name="Question18Answer02" xml:space="preserve">
+    <value>Not including reallocation of people</value>
+  </data>
+  <data name="Question18Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question01Answer01" xml:space="preserve">
+    <value>Known environmental issues</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question01Answer02" xml:space="preserve">
+    <value>No documented environmental instructions</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question01Answer03" xml:space="preserve">
+    <value>Some environmental instructions available and visible</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question01Answer04" xml:space="preserve">
+    <value>Appears to have a well structured work with environment</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question02Answer01" xml:space="preserve">
+    <value>Known health &amp; safety issues</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question02Answer02" xml:space="preserve">
+    <value>No documented safety and health instructions</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question02Answer03" xml:space="preserve">
+    <value>Some safety and health instructions available and visible</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question02Answer04" xml:space="preserve">
+    <value>Appears to have a well structured work with safety and health</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question02Answer05" xml:space="preserve">
+    <value>I don´t know</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question03Answer01" xml:space="preserve">
+    <value>Known human rights issues</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question03Answer02" xml:space="preserve">
+    <value>No information that the customer supports human rights.</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question03Answer03" xml:space="preserve">
+    <value>Some info supporting fundamentals of human rights.</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question03Answer04" xml:space="preserve">
+    <value>Public policy and/or formal program to observe the fundamentals of human rights.</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question03Answer05" xml:space="preserve">
+    <value>I don´t know</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question04Answer01" xml:space="preserve">
+    <value>Scania sales responsible not trained in Doing things right or similar.</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question04Answer02" xml:space="preserve">
+    <value>Scania sales responsible trained in Doing things right.</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question05Answer01" xml:space="preserve">
+    <value>Located in an environmentally sensitive area</value>
+  </data>
+  <data name="Question05Answer02" xml:space="preserve">
+    <value>Not located in an environmentally sensitive area</value>
+  </data>
+  <data name="Question05Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question06Answer01" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Question06Answer02" xml:space="preserve">
+    <value>No visit, but pictures from site and written information received</value>
+  </data>
+  <data name="Question06Answer03" xml:space="preserve">
+    <value>The site has been visited but not enough information about labour laws and working conditions for front line workers</value>
+  </data>
+  <data name="Question06Answer04" xml:space="preserve">
+    <value>The site has been visited and it appear that labour laws are followed and working conditions acceptable</value>
+  </data>
+  <data name="Question07Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question07Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question07Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question08Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question08Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question08Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question09Answer01" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Question09Answer02" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Question09Answer03" xml:space="preserve">
+    <value>I don´t know</value>
+  </data>
+  <data name="Question01Answer05" xml:space="preserve">
+    <value>I don´t know</value>
+    <comment>0</comment>
+  </data>
+  <data name="DUNSLabel" xml:space="preserve">
+    <value>DUNS</value>
+  </data>
+  <data name="SalesController_GetTerritories_Select" xml:space="preserve">
+    <value>Select country</value>
+  </data>
+  <data name="SalesController_GetSectors_Select" xml:space="preserve">
+    <value>Select sector</value>
+  </data>
+  <data name="Question20" xml:space="preserve">
+    <value>Special Areas</value>
+  </data>
+  <data name="Question20Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question20Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question20Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question20Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question20Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question20Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="Question21" xml:space="preserve">
+    <value>Supplier Management</value>
+  </data>
+  <data name="Question21Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question21Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question21Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question21Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question21Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question21Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="Question22" xml:space="preserve">
+    <value>Environmental Sustainability</value>
+  </data>
+  <data name="Question22Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question22Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question22Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question22Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question22Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question22Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="Question23" xml:space="preserve">
+    <value>Business Conduct and Compliance</value>
+  </data>
+  <data name="Question23Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question23Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question23Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question23Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question23Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question23Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="Question24" xml:space="preserve">
+    <value>Social Sustainability</value>
+  </data>
+  <data name="Question24Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question24Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question24Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question24Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question24Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question24Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="Question26" xml:space="preserve">
+    <value>Company management</value>
+  </data>
+  <data name="Question26Answer01" xml:space="preserve">
+    <value>Very low performance</value>
+    <comment>0</comment>
+  </data>
+  <data name="Question26Answer02" xml:space="preserve">
+    <value>Low performance</value>
+    <comment>3</comment>
+  </data>
+  <data name="Question26Answer03" xml:space="preserve">
+    <value>Medium performance</value>
+    <comment>5</comment>
+  </data>
+  <data name="Question26Answer04" xml:space="preserve">
+    <value>High performance</value>
+    <comment>8</comment>
+  </data>
+  <data name="Question26Answer05" xml:space="preserve">
+    <value>Very high performance</value>
+    <comment>10</comment>
+  </data>
+  <data name="Question26Answer06" xml:space="preserve">
+    <value>I don’t know </value>
+    <comment>0</comment>
+  </data>
+  <data name="SiteNameLabel" xml:space="preserve">
+    <value>Site Name</value>
+  </data>
+  <data name="SalesController_GetWebScan_Select" xml:space="preserve">
+    <value>Select comment</value>
+  </data>
+  <data name="SiteKnowledgeLabel" xml:space="preserve">
+    <value>Site knowledge</value>
+  </data>
+</root>

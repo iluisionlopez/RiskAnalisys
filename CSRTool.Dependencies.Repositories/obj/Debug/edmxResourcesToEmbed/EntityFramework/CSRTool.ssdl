@@ -1,0 +1,1172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSRToolEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="AnswerText" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentCustomer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AssessmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" />
+    <Property Name="Site" Type="varchar" MaxLength="50" />
+    <Property Name="Project" Type="varchar" MaxLength="50" />
+    <Property Name="Segment" Type="varchar" MaxLength="50" />
+    <Property Name="TerritoryId" Type="uniqueidentifier" />
+    <Property Name="VersionId" Type="uniqueidentifier" />
+    <Property Name="ScaniaDepartment" Type="varchar" MaxLength="50" />
+    <Property Name="CaseTypeId" Type="uniqueidentifier" />
+    <Property Name="SectorId" Type="uniqueidentifier" />
+    <Property Name="ResponibleSalesPerson" Type="varchar" MaxLength="50" />
+    <Property Name="RiskIndication" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+    <Property Name="IsComplete" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentCustomerQuestionAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentCustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionAnswerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AssessmentCustomerWebScan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WebScanTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SearchString" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NegativeInfoFound" Type="bit" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AssessmentOfferType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentCustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OfferTypeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentSupplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AssessmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="SupplierId" Type="uniqueidentifier" />
+    <Property Name="Site" Type="varchar" MaxLength="50" />
+    <Property Name="TerritoryId" Type="uniqueidentifier" />
+    <Property Name="VersionId" Type="uniqueidentifier" />
+    <Property Name="Commodity" Type="varchar" MaxLength="50" />
+    <Property Name="CaseTypeId" Type="uniqueidentifier" />
+    <Property Name="SectorId" Type="uniqueidentifier" />
+    <Property Name="Buyer" Type="varchar" MaxLength="50" />
+    <Property Name="Auditor" Type="varchar" MaxLength="50" />
+    <Property Name="AuditDate" Type="datetime" />
+    <Property Name="PerformanceRating" Type="float" />
+    <Property Name="RiskRating" Type="float" />
+    <Property Name="RatingComment" Type="varchar" MaxLength="200" />
+    <Property Name="Complete" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SupplyChainID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="AssessmentSupplierQuestionAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentSupplierId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionAnswerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AssessmentSupplierWebScan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WebScanId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NegativeInfo" Type="bit" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AssessmentTransactionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentCustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionTypeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssessmentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CSRToolDev.dbo.AssessmentTypeQuestion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AssessmentTypeQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="AssessmentTypeId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AssessmentTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionTypeId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="CaseType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Index">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IndexTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TerritoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VersionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Value" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IndexType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfferType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="QuestionText" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiskCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiskCategoryIndexType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RiskCategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IndexTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiskCategoryQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RiskCategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DUNS" Type="int" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupplyChain">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Value" Type="int" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Territory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TerritoryTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TerritoryType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransactionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comment" Type="varchar" MaxLength="200" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Reminders" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebScanType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Version">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AssessmentCustomer_AssessmentType">
+    <End Role="AssessmentType" Type="Self.AssessmentType" Multiplicity="1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="AssessmentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_CaseType">
+    <End Role="CaseType" Type="Self.CaseType" Multiplicity="0..1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CaseType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="CaseTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_ChangedByUser">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_CreatedByUser">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_Sector">
+    <End Role="Sector" Type="Self.Sector" Multiplicity="0..1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_Territory">
+    <End Role="Territory" Type="Self.Territory" Multiplicity="0..1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Territory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="TerritoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="AssessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomer_Version">
+    <End Role="Version" Type="Self.Version" Multiplicity="0..1" />
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Version">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomer">
+        <PropertyRef Name="VersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomerQuestionAnswer_AssessmentCustomer">
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="1" />
+    <End Role="AssessmentCustomerQuestionAnswer" Type="Self.AssessmentCustomerQuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentCustomer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomerQuestionAnswer">
+        <PropertyRef Name="AssessmentCustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomerQuestionAnswer_QuestionAnswer">
+    <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="1" />
+    <End Role="AssessmentCustomerQuestionAnswer" Type="Self.AssessmentCustomerQuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionAnswer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomerQuestionAnswer">
+        <PropertyRef Name="QuestionAnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentCustomerWebScan_WebScanType">
+    <End Role="WebScanType" Type="Self.WebScanType" Multiplicity="1" />
+    <End Role="AssessmentCustomerWebScan" Type="Self.AssessmentCustomerWebScan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebScanType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomerWebScan">
+        <PropertyRef Name="WebScanTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentOfferType_AssessmentCustomer">
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="1" />
+    <End Role="AssessmentOfferType" Type="Self.AssessmentOfferType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentCustomer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentOfferType">
+        <PropertyRef Name="AssessmentCustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentOfferType_OfferType">
+    <End Role="OfferType" Type="Self.OfferType" Multiplicity="1" />
+    <End Role="AssessmentOfferType" Type="Self.AssessmentOfferType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfferType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentOfferType">
+        <PropertyRef Name="OfferTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_AssessmentType">
+    <End Role="AssessmentType" Type="Self.AssessmentType" Multiplicity="1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="AssessmentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_CaseType">
+    <End Role="CaseType" Type="Self.CaseType" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CaseType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="CaseTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_ChangedByUser">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_CreatedByUser">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_Sector">
+    <End Role="Sector" Type="Self.Sector" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_SupplyChain">
+    <End Role="SupplyChain" Type="Self.SupplyChain" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplyChain">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="SupplyChainID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_Territory">
+    <End Role="Territory" Type="Self.Territory" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Territory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="TerritoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="AssessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplier_Version">
+    <End Role="Version" Type="Self.Version" Multiplicity="0..1" />
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Version">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplier">
+        <PropertyRef Name="VersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplierQuestionAnswer_AssessmentSupplier">
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="1" />
+    <End Role="AssessmentSupplierQuestionAnswer" Type="Self.AssessmentSupplierQuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentSupplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplierQuestionAnswer">
+        <PropertyRef Name="AssessmentSupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplierQuestionAnswer_QuestionAnswer">
+    <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="1" />
+    <End Role="AssessmentSupplierQuestionAnswer" Type="Self.AssessmentSupplierQuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionAnswer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplierQuestionAnswer">
+        <PropertyRef Name="QuestionAnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentSupplierWebScan_WebScan">
+    <End Role="WebScanType" Type="Self.WebScanType" Multiplicity="1" />
+    <End Role="AssessmentSupplierWebScan" Type="Self.AssessmentSupplierWebScan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebScanType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplierWebScan">
+        <PropertyRef Name="WebScanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentTransactionType_AssessmentCustomer">
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="1" />
+    <End Role="AssessmentTransactionType" Type="Self.AssessmentTransactionType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentCustomer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentTransactionType">
+        <PropertyRef Name="AssessmentCustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentTransactionType_TransactionType">
+    <End Role="TransactionType" Type="Self.TransactionType" Multiplicity="1" />
+    <End Role="AssessmentTransactionType" Type="Self.AssessmentTransactionType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransactionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentTransactionType">
+        <PropertyRef Name="TransactionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentTypeQuestion_AssessmentType">
+    <End Role="AssessmentType" Type="Self.AssessmentType" Multiplicity="1" />
+    <End Role="AssessmentTypeQuestion" Type="Self.AssessmentTypeQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentTypeQuestion">
+        <PropertyRef Name="AssessmentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentTypeQuestion_Question">
+    <End Role="Question" Type="Self.Question" Multiplicity="1" />
+    <End Role="AssessmentTypeQuestion" Type="Self.AssessmentTypeQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentTypeQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentTypeQuestion_TransactionType">
+    <End Role="TransactionType" Type="Self.TransactionType" Multiplicity="0..1" />
+    <End Role="AssessmentTypeQuestion" Type="Self.AssessmentTypeQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransactionType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentTypeQuestion">
+        <PropertyRef Name="TransactionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentWebScan_AssessmentCustomer">
+    <End Role="AssessmentCustomer" Type="Self.AssessmentCustomer" Multiplicity="1" />
+    <End Role="AssessmentCustomerWebScan" Type="Self.AssessmentCustomerWebScan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentCustomer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentCustomerWebScan">
+        <PropertyRef Name="AssessmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssessmentWebScan_AssessmentSupplier">
+    <End Role="AssessmentSupplier" Type="Self.AssessmentSupplier" Multiplicity="1" />
+    <End Role="AssessmentSupplierWebScan" Type="Self.AssessmentSupplierWebScan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AssessmentSupplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssessmentSupplierWebScan">
+        <PropertyRef Name="AssessmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Index_IndexType">
+    <End Role="IndexType" Type="Self.IndexType" Multiplicity="1" />
+    <End Role="Index" Type="Self.Index" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IndexType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Index">
+        <PropertyRef Name="IndexTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Index_Territory">
+    <End Role="Territory" Type="Self.Territory" Multiplicity="1" />
+    <End Role="Index" Type="Self.Index" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Territory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Index">
+        <PropertyRef Name="TerritoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Index_Version">
+    <End Role="Version" Type="Self.Version" Multiplicity="1" />
+    <End Role="Index" Type="Self.Index" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Version">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Index">
+        <PropertyRef Name="VersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionAnswer_Answer">
+    <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+    <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionAnswer">
+        <PropertyRef Name="AnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionAnswer_Question">
+    <End Role="Question" Type="Self.Question" Multiplicity="1" />
+    <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionAnswer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RiskCategoryIndexType_IndexType">
+    <End Role="IndexType" Type="Self.IndexType" Multiplicity="1" />
+    <End Role="RiskCategoryIndexType" Type="Self.RiskCategoryIndexType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IndexType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RiskCategoryIndexType">
+        <PropertyRef Name="IndexTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RiskCategoryIndexType_RiskCategory">
+    <End Role="RiskCategory" Type="Self.RiskCategory" Multiplicity="1" />
+    <End Role="RiskCategoryIndexType" Type="Self.RiskCategoryIndexType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RiskCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RiskCategoryIndexType">
+        <PropertyRef Name="RiskCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RiskCategoryQuestion_Question">
+    <End Role="Question" Type="Self.Question" Multiplicity="1" />
+    <End Role="RiskCategoryQuestion" Type="Self.RiskCategoryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RiskCategoryQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RiskCategoryQuestion_RiskCategory">
+    <End Role="RiskCategory" Type="Self.RiskCategory" Multiplicity="1" />
+    <End Role="RiskCategoryQuestion" Type="Self.RiskCategoryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RiskCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RiskCategoryQuestion">
+        <PropertyRef Name="RiskCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Territory_ChangedBy">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Territory" Type="Self.Territory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Territory">
+        <PropertyRef Name="ChangedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Territory_CreatedBy">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Territory" Type="Self.Territory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Territory">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Territory_TerritoryType">
+    <End Role="TerritoryType" Type="Self.TerritoryType" Multiplicity="1" />
+    <End Role="Territory" Type="Self.Territory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TerritoryType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Territory">
+        <PropertyRef Name="TerritoryTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CSRToolEntitiesStoreContainer">
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentCustomer" EntityType="Self.AssessmentCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentCustomerQuestionAnswer" EntityType="Self.AssessmentCustomerQuestionAnswer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentCustomerWebScan" EntityType="Self.AssessmentCustomerWebScan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentOfferType" EntityType="Self.AssessmentOfferType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentSupplier" EntityType="Self.AssessmentSupplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentSupplierQuestionAnswer" EntityType="Self.AssessmentSupplierQuestionAnswer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentSupplierWebScan" EntityType="Self.AssessmentSupplierWebScan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTransactionType" EntityType="Self.AssessmentTransactionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentType" EntityType="Self.AssessmentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CaseType" EntityType="Self.CaseType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Index" EntityType="Self.Index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IndexType" EntityType="Self.IndexType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OfferType" EntityType="Self.OfferType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionAnswer" EntityType="Self.QuestionAnswer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RiskCategory" EntityType="Self.RiskCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RiskCategoryIndexType" EntityType="Self.RiskCategoryIndexType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RiskCategoryQuestion" EntityType="Self.RiskCategoryQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sector" EntityType="Self.Sector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupplyChain" EntityType="Self.SupplyChain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Territory" EntityType="Self.Territory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TerritoryType" EntityType="Self.TerritoryType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionType" EntityType="Self.TransactionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebScanType" EntityType="Self.WebScanType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Version" EntityType="Self.Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssessmentTypeQuestion" EntityType="Self.AssessmentTypeQuestion" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AssessmentTypeQuestion].[Id] AS [Id], 
+    [AssessmentTypeQuestion].[AssessmentTypeId] AS [AssessmentTypeId], 
+    [AssessmentTypeQuestion].[QuestionId] AS [QuestionId], 
+    [AssessmentTypeQuestion].[TransactionTypeId] AS [TransactionTypeId]
+    FROM [dbo].[AssessmentTypeQuestion] AS [AssessmentTypeQuestion]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AssessmentCustomer_AssessmentType" Association="Self.FK_AssessmentCustomer_AssessmentType">
+      <End Role="AssessmentType" EntitySet="AssessmentType" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_CaseType" Association="Self.FK_AssessmentCustomer_CaseType">
+      <End Role="CaseType" EntitySet="CaseType" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_ChangedByUser" Association="Self.FK_AssessmentCustomer_ChangedByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_CreatedByUser" Association="Self.FK_AssessmentCustomer_CreatedByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_Customer" Association="Self.FK_AssessmentCustomer_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_Sector" Association="Self.FK_AssessmentCustomer_Sector">
+      <End Role="Sector" EntitySet="Sector" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_Territory" Association="Self.FK_AssessmentCustomer_Territory">
+      <End Role="Territory" EntitySet="Territory" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_User" Association="Self.FK_AssessmentCustomer_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomer_Version" Association="Self.FK_AssessmentCustomer_Version">
+      <End Role="Version" EntitySet="Version" />
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomerQuestionAnswer_AssessmentCustomer" Association="Self.FK_AssessmentCustomerQuestionAnswer_AssessmentCustomer">
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+      <End Role="AssessmentCustomerQuestionAnswer" EntitySet="AssessmentCustomerQuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomerQuestionAnswer_QuestionAnswer" Association="Self.FK_AssessmentCustomerQuestionAnswer_QuestionAnswer">
+      <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+      <End Role="AssessmentCustomerQuestionAnswer" EntitySet="AssessmentCustomerQuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentCustomerWebScan_WebScanType" Association="Self.FK_AssessmentCustomerWebScan_WebScanType">
+      <End Role="WebScanType" EntitySet="WebScanType" />
+      <End Role="AssessmentCustomerWebScan" EntitySet="AssessmentCustomerWebScan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentOfferType_AssessmentCustomer" Association="Self.FK_AssessmentOfferType_AssessmentCustomer">
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+      <End Role="AssessmentOfferType" EntitySet="AssessmentOfferType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentOfferType_OfferType" Association="Self.FK_AssessmentOfferType_OfferType">
+      <End Role="OfferType" EntitySet="OfferType" />
+      <End Role="AssessmentOfferType" EntitySet="AssessmentOfferType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_AssessmentType" Association="Self.FK_AssessmentSupplier_AssessmentType">
+      <End Role="AssessmentType" EntitySet="AssessmentType" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_CaseType" Association="Self.FK_AssessmentSupplier_CaseType">
+      <End Role="CaseType" EntitySet="CaseType" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_ChangedByUser" Association="Self.FK_AssessmentSupplier_ChangedByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_CreatedByUser" Association="Self.FK_AssessmentSupplier_CreatedByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_Sector" Association="Self.FK_AssessmentSupplier_Sector">
+      <End Role="Sector" EntitySet="Sector" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_Supplier" Association="Self.FK_AssessmentSupplier_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_SupplyChain" Association="Self.FK_AssessmentSupplier_SupplyChain">
+      <End Role="SupplyChain" EntitySet="SupplyChain" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_Territory" Association="Self.FK_AssessmentSupplier_Territory">
+      <End Role="Territory" EntitySet="Territory" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_User" Association="Self.FK_AssessmentSupplier_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplier_Version" Association="Self.FK_AssessmentSupplier_Version">
+      <End Role="Version" EntitySet="Version" />
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplierQuestionAnswer_AssessmentSupplier" Association="Self.FK_AssessmentSupplierQuestionAnswer_AssessmentSupplier">
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+      <End Role="AssessmentSupplierQuestionAnswer" EntitySet="AssessmentSupplierQuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplierQuestionAnswer_QuestionAnswer" Association="Self.FK_AssessmentSupplierQuestionAnswer_QuestionAnswer">
+      <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+      <End Role="AssessmentSupplierQuestionAnswer" EntitySet="AssessmentSupplierQuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentSupplierWebScan_WebScan" Association="Self.FK_AssessmentSupplierWebScan_WebScan">
+      <End Role="WebScanType" EntitySet="WebScanType" />
+      <End Role="AssessmentSupplierWebScan" EntitySet="AssessmentSupplierWebScan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentTransactionType_AssessmentCustomer" Association="Self.FK_AssessmentTransactionType_AssessmentCustomer">
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+      <End Role="AssessmentTransactionType" EntitySet="AssessmentTransactionType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentTransactionType_TransactionType" Association="Self.FK_AssessmentTransactionType_TransactionType">
+      <End Role="TransactionType" EntitySet="TransactionType" />
+      <End Role="AssessmentTransactionType" EntitySet="AssessmentTransactionType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentTypeQuestion_AssessmentType" Association="Self.FK_AssessmentTypeQuestion_AssessmentType">
+      <End Role="AssessmentType" EntitySet="AssessmentType" />
+      <End Role="AssessmentTypeQuestion" EntitySet="AssessmentTypeQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentTypeQuestion_Question" Association="Self.FK_AssessmentTypeQuestion_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="AssessmentTypeQuestion" EntitySet="AssessmentTypeQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentTypeQuestion_TransactionType" Association="Self.FK_AssessmentTypeQuestion_TransactionType">
+      <End Role="TransactionType" EntitySet="TransactionType" />
+      <End Role="AssessmentTypeQuestion" EntitySet="AssessmentTypeQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentWebScan_AssessmentCustomer" Association="Self.FK_AssessmentWebScan_AssessmentCustomer">
+      <End Role="AssessmentCustomer" EntitySet="AssessmentCustomer" />
+      <End Role="AssessmentCustomerWebScan" EntitySet="AssessmentCustomerWebScan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssessmentWebScan_AssessmentSupplier" Association="Self.FK_AssessmentWebScan_AssessmentSupplier">
+      <End Role="AssessmentSupplier" EntitySet="AssessmentSupplier" />
+      <End Role="AssessmentSupplierWebScan" EntitySet="AssessmentSupplierWebScan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Index_IndexType" Association="Self.FK_Index_IndexType">
+      <End Role="IndexType" EntitySet="IndexType" />
+      <End Role="Index" EntitySet="Index" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Index_Territory" Association="Self.FK_Index_Territory">
+      <End Role="Territory" EntitySet="Territory" />
+      <End Role="Index" EntitySet="Index" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Index_Version" Association="Self.FK_Index_Version">
+      <End Role="Version" EntitySet="Version" />
+      <End Role="Index" EntitySet="Index" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionAnswer_Answer" Association="Self.FK_QuestionAnswer_Answer">
+      <End Role="Answer" EntitySet="Answer" />
+      <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionAnswer_Question" Association="Self.FK_QuestionAnswer_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RiskCategoryIndexType_IndexType" Association="Self.FK_RiskCategoryIndexType_IndexType">
+      <End Role="IndexType" EntitySet="IndexType" />
+      <End Role="RiskCategoryIndexType" EntitySet="RiskCategoryIndexType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RiskCategoryIndexType_RiskCategory" Association="Self.FK_RiskCategoryIndexType_RiskCategory">
+      <End Role="RiskCategory" EntitySet="RiskCategory" />
+      <End Role="RiskCategoryIndexType" EntitySet="RiskCategoryIndexType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RiskCategoryQuestion_Question" Association="Self.FK_RiskCategoryQuestion_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="RiskCategoryQuestion" EntitySet="RiskCategoryQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RiskCategoryQuestion_RiskCategory" Association="Self.FK_RiskCategoryQuestion_RiskCategory">
+      <End Role="RiskCategory" EntitySet="RiskCategory" />
+      <End Role="RiskCategoryQuestion" EntitySet="RiskCategoryQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Territory_ChangedBy" Association="Self.FK_Territory_ChangedBy">
+      <End Role="User" EntitySet="User" />
+      <End Role="Territory" EntitySet="Territory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Territory_CreatedBy" Association="Self.FK_Territory_CreatedBy">
+      <End Role="User" EntitySet="User" />
+      <End Role="Territory" EntitySet="Territory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Territory_TerritoryType" Association="Self.FK_Territory_TerritoryType">
+      <End Role="TerritoryType" EntitySet="TerritoryType" />
+      <End Role="Territory" EntitySet="Territory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

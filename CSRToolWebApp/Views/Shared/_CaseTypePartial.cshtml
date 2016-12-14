@@ -1,0 +1,7 @@
+﻿@model IEnumerable<SelectListItem>
+@foreach (var item in Model)
+{
+    <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="@string.Concat("casetype", item.Text.Replace(" ", string.Empty))" value="@item.Value" checked="@item.Selected"> @item.Text
+    </label>
+}
